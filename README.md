@@ -156,6 +156,9 @@ By effectively managing micro frontends, development teams can ensure smooth col
 
 ## CI/CD  setup of Micro Frontends and Infrastructure Management
 
+![image](https://github.com/suramya-shah/introduction-to-microfrontends/assets/21042045/8f23bce7-7a75-4c9d-800f-2f2c5a957e17)
+
+
 Certainly! Here's a complete end-to-end pipeline for a multi-microfrontend architecture, including the GitHub Actions workflow, code, CloudFormation template, and infrastructure configuration:
 
 Certainly! Here's a basic code structure for a multi-microfrontend architecture that can be added to your repository:
