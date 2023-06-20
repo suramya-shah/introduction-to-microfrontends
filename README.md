@@ -282,9 +282,8 @@ Performance Optimization Considerations
 
 Micro frontends bring their own performance challenges due to increased complexity and the potential for redundant code. Techniques like code splitting, lazy loading, and caching can be employed to optimize performance and reduce load times.
 
-Challenges of Micro Frontends and Ways to Mitigate Them
+# Challenges of Micro Frontends and Ways to Mitigate Them
 
-Challenges of Micro Frontends and Ways to Mitigate Them
 
 Micro frontend architecture brings many benefits, but it also comes with its own set of challenges. Here are some common challenges associated with micro frontends and strategies to mitigate them:
 
