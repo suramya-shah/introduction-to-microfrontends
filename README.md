@@ -387,8 +387,6 @@ Resources:
 
 Configuring alarms
 
-Certainly! Here's an example CloudFormation template for creating alarms and alerts for CDN and S3 in the context of microfrontends:
-
 ```yaml
 AWSTemplateFormatVersion: '2010-09-09'
 Resources:
