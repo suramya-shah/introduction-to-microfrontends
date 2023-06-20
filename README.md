@@ -530,7 +530,7 @@ OpenAI. (2021). Introduction to Micro Frontends. Retrieved from https://www.open
 Zou, L. (2020). Micro Frontends - Breaking the Monolith Frontend for Better Scalability. Retrieved from https://levelup.gitconnected.com/micro-frontends-breaking-the-monolith-frontend-for-better-scalability-2e01f2e11d0e
 AWS. (2021). Implementing Micro Frontends. Retrieved from https://aws.amazon.com/microservices/implementing-microservices-on-aws/
 
-## References
+## References and further reading
 
 - [Nginx](https://www.nginx.com/blog/what-is-a-service-mesh/#:~:text=Load%20balancing.&text=A%20service%20mesh%20implements%20more,blue%E2%80%91green%20or%20canary%20deployments.)
 - [Linkerd](https://linkerd.io/what-is-a-service-mesh/#where-did-the-service-mesh-come-from)
