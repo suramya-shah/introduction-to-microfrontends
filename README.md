@@ -1,3 +1,22 @@
+---
+title: "Introduction to Microfrontends"
+description: "his detailed blog covers everything you need to know about Microfrontends"
+author: "Suramya Shah"
+index_image: /assets/img/Blog/
+date: 2023-06-20
+slug: introduction-to-microfrontends
+categories:
+  - Service Mesh
+tags: ["service mesh","service-mesh-architecture","service-mesh-use-cases"]
+featured_image: /assets/img/Blog/demystifying-service-mesh/demystifying-a-service-mesh-1600x350.svg
+cta_label: "Learn More"
+cta_content: ""
+cta_url: "/"
+blog_side_url: "//"
+blog_side_img: "/assets/img/"
+blog_side_alt: ""
+---
+
 ![Alt Text](41-coke-overview.gif)
 # Introduction to Micro Frontends
 
@@ -511,3 +530,15 @@ OpenAI. (2021). Introduction to Micro Frontends. Retrieved from https://www.open
 Zou, L. (2020). Micro Frontends - Breaking the Monolith Frontend for Better Scalability. Retrieved from https://levelup.gitconnected.com/micro-frontends-breaking-the-monolith-frontend-for-better-scalability-2e01f2e11d0e
 AWS. (2021). Implementing Micro Frontends. Retrieved from https://aws.amazon.com/microservices/implementing-microservices-on-aws/
 
+## References
+
+- [Nginx](https://www.nginx.com/blog/what-is-a-service-mesh/#:~:text=Load%20balancing.&text=A%20service%20mesh%20implements%20more,blue%E2%80%91green%20or%20canary%20deployments.)
+- [Linkerd](https://linkerd.io/what-is-a-service-mesh/#where-did-the-service-mesh-come-from)
+- [Redhat](https://www.redhat.com/en/topics/microservices/what-is-a-service-mesh#planning-for-the-future)
+- [Kong](https://konghq.com/learning-center/service-mesh/what-is-a-service-mesh)
+- [Cncf](https://www.cncf.io/blog/2021/07/15/networking-with-a-service-mesh-use-cases-best-practices-and-comparison-of-top-mesh-options/)
+- [Istio](https://istio.io/latest/blog/2017/0.1-canary/)
+- [Blue-green deployment with istio](https://thenewstack.io/tutorial-blue-green-deployments-with-kubernetes-and-istio/)
+- [Api gateway vs service mesh](https://blog.getambassador.io/microservice-service-discovery-api-gateway-or-service-mesh-77c468167025)
+- [Service mesh without Kubernetes](https://www.hashicorp.com/resources/service-mesh-without-kubernetes)
+- [What is a service mesh?](https://www.koyeb.com/blog/what-is-a-service-mesh)
