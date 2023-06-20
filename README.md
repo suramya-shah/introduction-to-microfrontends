@@ -1,4 +1,4 @@
-
+![Alt Text](41-coke-overview.gif)
 # Introduction to Micro Frontends
 
 Micro frontends have emerged as a revolutionary architectural pattern in web development, providing a solution to the limitations of monolithic frontends. Traditionally, web applications were built as a single, tightly coupled unit, making it challenging to maintain, scale, and deploy changes. Micro frontends offer a fresh perspective by breaking down the frontend into smaller, independent units that can be developed and deployed separately.
