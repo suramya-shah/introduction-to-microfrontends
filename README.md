@@ -361,6 +361,69 @@ Resources:
 - Create S3 buckets in the AWS console with the names specified in the `Bucket
 
 
+Configuring alarms
+
+Certainly! Here's an example CloudFormation template for creating alarms and alerts for CDN and S3 in the context of microfrontends:
+
+```yaml
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  CDNHitRatioAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: CDNHitRatioAlarm
+      AlarmDescription: Alert if CDN cache hit ratio drops below a certain threshold
+      Namespace: AWS/CloudFront
+      MetricName: CacheHitRate
+      Statistic: Average
+      Period: 300
+      EvaluationPeriods: 1
+      Threshold: 90
+      ComparisonOperator: LessThanThreshold
+      AlarmActions:
+        - !Ref AlarmNotificationTopic
+
+  S3BucketSizeAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: S3BucketSizeAlarm
+      AlarmDescription: Alert if S3 bucket size exceeds a certain threshold
+      Namespace: AWS/S3
+      MetricName: BucketSizeBytes
+      Statistic: Average
+      Period: 900
+      EvaluationPeriods: 1
+      Threshold: 1073741824 # 1 GB
+      ComparisonOperator: GreaterThanThreshold
+      AlarmActions:
+        - !Ref AlarmNotificationTopic
+
+  AlarmNotificationTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName: MyAlarmNotificationTopic
+
+  AlarmEmailSubscription:
+    Type: AWS::SNS::Subscription
+    Properties:
+      Protocol: email
+      Endpoint: your-email@example.com
+      TopicArn: !Ref AlarmNotificationTopic
+```
+
+Explanation:
+
+- The CloudFormation template defines two alarms: `CDNHitRatioAlarm` and `S3BucketSizeAlarm`.
+
+- The `CDNHitRatioAlarm` triggers an alert if the cache hit ratio drops below the threshold of 90% for a single evaluation period of 300 seconds (5 minutes). It uses the CloudFront namespace and the `CacheHitRate` metric.
+
+- The `S3BucketSizeAlarm` triggers an alert if the S3 bucket size exceeds the threshold of 1 GB (1073741824 bytes) for a single evaluation period of 900 seconds (15 minutes). It uses the S3 namespace and the `BucketSizeBytes` metric.
+
+- The alarms are associated with the `AlarmNotificationTopic`, which represents an SNS topic for sending notifications. In this example, it is configured to send email notifications to `your-email@example.com`.
+
+Please note that this is a simplified example, and you may need to customize the CloudFormation template based on your specific requirements and configuration.
+
+
 
 # Micro Frontends Best Practices
 
