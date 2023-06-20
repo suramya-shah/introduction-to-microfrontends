@@ -130,12 +130,7 @@ c. Mixed Approach: The mixed approach combines elements of both monorepo and mul
 By effectively managing micro frontends, development teams can ensure smooth collaboration, streamlined development processes, and efficient deployment and maintenance. This leads to a more scalable, maintainable, and resilient application architecture.
 
 
-
-# Simplifying Micro Frontends with Module Federation vs. Iframe Approach
-
-Module Federation is an approach that simplifies the integration of micro frontends by dynamically loading and sharing modules between different applications at runtime. It enables seamless communication and collaboration between micro frontend modules without the need for iframes, reducing the complexity and overhead of traditional iframe-based approaches.
-
-CI/CD of Micro Frontends and Infrastructure Management
+# CI/CD of Micro Frontends and Infrastructure Management
 
 Certainly! Here's a complete end-to-end pipeline for a multi-microfrontend architecture, including the GitHub Actions workflow, code, CloudFormation template, and infrastructure configuration:
 
