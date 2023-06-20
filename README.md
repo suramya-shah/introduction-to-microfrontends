@@ -83,6 +83,9 @@ Overall, micro frontend architecture combines these elements to create a scalabl
 
 ![image](https://github.com/suramya-shah/introduction-to-microfrontends/assets/21042045/c0ef39b7-d885-4f96-8c2b-a83120c8b0e8)
 
+![image](https://github.com/suramya-shah/introduction-to-microfrontends/assets/21042045/73330218-3354-41cb-9cf0-1cce00ef6260)
+
+
 
 # Micro Frontend Frameworks and Integration Types
 
