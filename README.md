@@ -236,6 +236,73 @@ jobs:
 
 - Place the code for each microfrontend inside its respective directory.
 
+  Certainly! Here's an example code structure for `microfrontend1`:
+
+```
+- microfrontend1/
+  - src/
+    - components/
+      - Button.js
+      - Card.js
+    - App.js
+    - index.js
+  - public/
+    - index.html
+  - package.json
+  - webpack.config.js
+```
+
+Here's an example code for `App.js`:
+
+```jsx
+import React from 'react';
+import Button from './components/Button';
+import Card from './components/Card';
+
+function App() {
+  return (
+    <div>
+      <h1>Microfrontend 1</h1>
+      <Button />
+      <Card />
+    </div>
+  );
+}
+
+export default App;
+```
+
+And here's an example code for `Button.js`:
+
+```jsx
+import React from 'react';
+
+function Button() {
+  return <button>Click me</button>;
+}
+
+export default Button;
+```
+
+And an example code for `Card.js`:
+
+```jsx
+import React from 'react';
+
+function Card() {
+  return (
+    <div>
+      <h2>Card Title</h2>
+      <p>This is a card component.</p>
+    </div>
+  );
+}
+
+export default Card;
+```
+
+These are just simple examples to illustrate the code structure and component hierarchy within `microfrontend1`. You can add more components and customize them according to your requirements.
+
 3. **CloudFormation Template (`infrastructure.yaml`):**
 
 ```yaml
