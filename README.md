@@ -81,6 +81,9 @@ Micro frontend architecture refers to the design and structure of a web applicat
 Overall, micro frontend architecture combines these elements to create a scalable, modular, and flexible architecture for web applications. It enables teams to work independently, choose their preferred technologies, and deliver features autonomously. The architecture fosters collaboration, code sharing, and efficient development practices. By adopting micro frontend architecture, development teams can build complex applications while maintaining flexibility, scalability, and ease of maintenance.
 
 
+![image](https://github.com/suramya-shah/introduction-to-microfrontends/assets/21042045/c0ef39b7-d885-4f96-8c2b-a83120c8b0e8)
+
+
 # Micro Frontend Frameworks and Integration Types
 
 Micro frontend architecture allows for the integration of different frameworks and technologies to build modular and independent frontend components. There are several frameworks and integration types available that facilitate the development and integration of micro frontends. Let's explore some popular micro frontend frameworks and integration types:
