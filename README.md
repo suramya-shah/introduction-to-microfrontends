@@ -414,8 +414,6 @@ Resources:
       TopicArn: !Ref AlarmNotificationTopic
 ```
 
-Explanation:
-
 - The CloudFormation template defines two alarms: `CDNHitRatioAlarm` and `S3BucketSizeAlarm`.
 
 - The `CDNHitRatioAlarm` triggers an alert if the cache hit ratio drops below the threshold of 90% for a single evaluation period of 300 seconds (5 minutes). It uses the CloudFront namespace and the `CacheHitRate` metric.
