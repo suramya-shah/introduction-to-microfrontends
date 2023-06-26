@@ -1,0 +1,44 @@
+Resources:
+  Microfrontend1Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: microfrontend1-bucket
+      AccessControl: PublicRead
+
+  Microfrontend2Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: microfrontend2-bucket
+      AccessControl: PublicRead
+
+  CloudFrontDistribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Origins:
+          - DomainName: !GetAtt Microfrontend1Bucket.RegionalDomainName
+            Id: Microfrontend1Origin
+            S3OriginConfig:
+              OriginAccessIdentity: ''
+          - DomainName: !GetAtt Microfrontend2Bucket.RegionalDomainName
+            Id: Microfrontend2Origin
+            S3OriginConfig:
+              OriginAccessIdentity: ''
+        Enabled: true
+        DefaultRootObject: index.html
+        DefaultCacheBehavior:
+          AllowedMethods:
+            - GET
+            - HEAD
+            - OPTIONS
+          CachedMethods:
+            - GET
+            - HEAD
+            - OPTIONS
+          TargetOriginId: Microfrontend1Origin
+          ForwardedValues:
+            QueryString: false
+            Cookies:
+              Forward: none
+        ViewerCertificate:
+          CloudFrontDefaultCertificate: true
