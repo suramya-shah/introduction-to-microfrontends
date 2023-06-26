@@ -55,7 +55,7 @@ The need for micro frontends arises from the limitations of monolithic frontends
 
 5. Team Collaboration: Micro frontends enable decentralized team collaboration, allowing teams to work independently and own specific functionalities or features. This reduces bottlenecks and dependencies, improves productivity, and fosters a sense of ownership and autonomy among team members.
 
-In summary, micro frontends offer a modular and independent approach to frontend development, addressing the limitations of monolithic frontends. By enabling parallel development, scalability, flexibility in technology choices, code reusability, and improved team collaboration, micro frontends provide a solution to building large and complex web applications efficiently and effectively.
+Micro frontends offer a modular and independent approach to frontend development, addressing the limitations of monolithic frontends. By enabling parallel development, scalability, flexibility in technology choices, code reusability, and improved team collaboration, micro frontends provide a solution to building large and complex web applications efficiently and effectively.
 
 
 ## Benefits of Micro Frontends
@@ -72,7 +72,7 @@ Micro frontends have gained popularity in web development due to the numerous be
 
 5. Improved Performance and User Experience: Micro frontends offer performance benefits through optimized loading and rendering. Only the required modules are loaded, reducing the initial load time. Lazy loading and dynamic loading techniques can further enhance performance by deferring the loading of non-critical modules. Additionally, micro frontends allow for targeted optimization of specific functionalities, resulting in a smoother and faster user experience.
 
-In summary, micro frontends provide several benefits, including independent development and deployment, scalability, flexibility, enhanced maintainability, improved team collaboration and autonomy, and better performance and user experience. By adopting micro frontends, development teams can build and evolve large-scale web applications more effectively and efficiently, while addressing the limitations of monolithic frontends.
+There are several benefits that microfrontends provide, including independent development and deployment, scalability, flexibility, enhanced maintainability, improved team collaboration and autonomy, and better performance and user experience. By adopting micro frontends, development teams can build and evolve large-scale web applications more effectively and efficiently, while addressing the limitations of monolithic frontends.
 
 
 ## Micro Frontend Architecture
