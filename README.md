@@ -450,14 +450,6 @@ Explanation:
 
 By following these best practices, development teams can effectively manage and develop micro frontends while promoting collaboration, scalability, and maintainability within the architecture.
 
-Developing Efficient CI/CD Pipelines and Automations
-
-Automation plays a vital role in managing and deploying micro frontends. Building efficient CI/CD pipelines and automating repetitive tasks can significantly improve development velocity, code quality, and deployment reliability.
-
-Performance Optimization Considerations
-
-Micro frontends bring their own performance challenges due to increased complexity and the potential for redundant code. Techniques like code splitting, lazy loading, and caching can be employed to optimize performance and reduce load times.
-
 ## Challenges of Micro Frontends and Ways to Mitigate Them
 
 Micro frontend architecture brings many benefits, but it also comes with its own set of challenges. Here are some common challenges associated with micro frontends and strategies to mitigate them:
@@ -492,28 +484,10 @@ However, micro frontends also come with their own challenges. Cross-cutting conc
 In conclusion, micro frontends offer a compelling solution for building large-scale web applications. They empower development teams to work independently, adopt the best tools for the job, and create modular and scalable architectures. By embracing micro frontends, organizations can achieve greater flexibility, maintainability, and resilience in their frontend development processes, ultimately delivering better user experiences and driving business success.
 
 
-## References
+## References and further reading 
 
-Fowler, M. (2019). Micro Frontends. Retrieved from https://martinfowler.com/articles/micro-frontends.html
-Geers, L. (2020). The Complete Guide to Micro Frontends. Retrieved from https://www.toptal.com/front-end/guide-to-micro-frontends
-Nystrom, F. (2020). Micro Frontends: A Microservices Approach to Frontend Web Development. O'Reilly Media.
-Brückner, M., & Geers, L. (2021). Micro Frontends in Action. Manning Publications.
-Carrasco, M., & Carrasco, R. (2020). Frontend Microservices with Angular and Nx. Apress.
-Shellhammer, B. (2021). Micro Frontends with React: A Complete Developer's Guide. Packt Publishing.
-MuleSoft. (2020). Anypoint Platform: Micro Frontends. Retrieved from https://www.mulesoft.com/platform/anypoint-platform/micro-frontends
-OpenAI. (2021). Introduction to Micro Frontends. Retrieved from https://www.openai.com/learn/introduction-to-micro-frontends/
-Zou, L. (2020). Micro Frontends - Breaking the Monolith Frontend for Better Scalability. Retrieved from https://levelup.gitconnected.com/micro-frontends-breaking-the-monolith-frontend-for-better-scalability-2e01f2e11d0e
-AWS. (2021). Implementing Micro Frontends. Retrieved from https://aws.amazon.com/microservices/implementing-microservices-on-aws/
+- [Micro Frontends](https://martinfowler.com/articles/micro-frontends.html)
+- [The Complete Guide to Micro Frontends](https://www.toptal.com/front-end/guide-to-micro-frontends)
+- [Breaking the Monolith Frontend for Better Scalability](https://levelup.gitconnected.com/micro-frontends-breaking-the-monolith-frontend-for-better-scalability-2e01f2e11d0e)
+- [Implementing Micro Frontends](https://aws.amazon.com/microservices/implementing-microservices-on-aws)
 
-## References and further reading
-
-- [Nginx](https://www.nginx.com/blog/what-is-a-service-mesh/#:~:text=Load%20balancing.&text=A%20service%20mesh%20implements%20more,blue%E2%80%91green%20or%20canary%20deployments.)
-- [Linkerd](https://linkerd.io/what-is-a-service-mesh/#where-did-the-service-mesh-come-from)
-- [Redhat](https://www.redhat.com/en/topics/microservices/what-is-a-service-mesh#planning-for-the-future)
-- [Kong](https://konghq.com/learning-center/service-mesh/what-is-a-service-mesh)
-- [Cncf](https://www.cncf.io/blog/2021/07/15/networking-with-a-service-mesh-use-cases-best-practices-and-comparison-of-top-mesh-options/)
-- [Istio](https://istio.io/latest/blog/2017/0.1-canary/)
-- [Blue-green deployment with istio](https://thenewstack.io/tutorial-blue-green-deployments-with-kubernetes-and-istio/)
-- [Api gateway vs service mesh](https://blog.getambassador.io/microservice-service-discovery-api-gateway-or-service-mesh-77c468167025)
-- [Service mesh without Kubernetes](https://www.hashicorp.com/resources/service-mesh-without-kubernetes)
-- [What is a service mesh?](https://www.koyeb.com/blog/what-is-a-service-mesh)
