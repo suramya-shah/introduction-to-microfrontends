@@ -145,6 +145,8 @@ By effectively managing micro frontends, development teams can ensure smooth col
 
 ## CI/CD  setup of Micro Frontends and Infrastructure Management
 
+
+
 ![image](https://github.com/suramya-shah/introduction-to-microfrontends/assets/21042045/8f23bce7-7a75-4c9d-800f-2f2c5a957e17)
 
 ```
