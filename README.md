@@ -23,15 +23,6 @@ Micro frontends have emerged as a revolutionary architectural pattern in web dev
 
 The main concept behind micro frontends is to divide the frontend into multiple self-contained modules, each responsible for a specific functionality or feature of the application. These modules can be developed using different technologies, frameworks, or programming languages, allowing teams to choose the most suitable tools for their specific requirements. This modular approach promotes flexibility, scalability, and independent development.
 
-Micro frontends follow a Backend for Frontend (BFF) pattern, where a separate layer acts as an intermediary between the frontend modules and the backend services. This simplifies communication and data retrieval, ensuring seamless integration between the modules.
-
-Implementing micro frontends involves using frameworks like Single-spa, Webpack Module Federation, or Open Components, which provide the necessary tools and abstractions for developing and orchestrating the frontend modules. Integration can be achieved through iframe-based approaches, where each module is embedded within an iframe, or through module federation, which enables dynamic sharing of resources and seamless communication between the modules.
-
-Managing micro frontends requires careful consideration of the repository setup. The multi-repo approach involves maintaining separate repositories for each module, providing maximum independence and isolation. Alternatively, a monorepo approach can be adopted, housing all modules within a single repository, which promotes code sharing and visibility. A mixed approach is also possible, combining separate repositories with a monorepo structure.
-
-In conclusion, micro frontends offer a new paradigm for building web applications by breaking down monolithic frontends into smaller, independent modules. This approach provides benefits such as flexibility, scalability, and easier maintenance. By adopting micro frontends, teams can innovate faster, choose the most suitable technologies, and deliver features independently. With the right frameworks and repository setup, micro frontends have the potential to transform frontend development and empower teams to create more modular and adaptable applications.
-
-
 ## Monolithic Frontends and its Disadvantages
 Monolithic frontends, while a traditional approach to building web applications, have several disadvantages as the application grows in complexity and size. Here are the key drawbacks of monolithic frontends:
 
