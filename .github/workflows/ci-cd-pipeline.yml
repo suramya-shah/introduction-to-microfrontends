@@ -1,0 +1,53 @@
+name: Microfrontend CI/CD Pipeline
+on:
+  push:
+    branches:
+      - main
+  workflow_run:
+    workflows: ["CI/CD Pipeline"]
+    paths:
+      - '/infrastructure.yaml'
+
+jobs:
+  build-test-deploy-provision:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: npm run test
+
+      - name: Build microfrontends
+        run: npm run build
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Deploy microfrontends to S3 buckets
+        run: |
+          aws s3 sync ./microfrontend1/dist s3://microfrontend1-bucket
+          aws s3 sync ./microfrontend2/dist s3://microfrontend2-bucket
+          aws cloudfront create-invalidation --distribution-id your-distribution-id --paths "/*"
+
+      - name: Check if infrastructure.yaml has changed
+        id: check_changes
+        run: echo "Changes detected in infrastructure.yaml" && echo "::set-output name=changed::true" || echo "::set-output name=changed::false"
+        
+      - name: Provision AWS infrastructure using CloudFormation
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          aws cloudformation deploy --template-file infrastructure.yaml --stack-name your-stack-name --capabilities CAPABILITY_IAM
