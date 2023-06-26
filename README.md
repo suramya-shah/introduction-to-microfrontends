@@ -149,11 +149,6 @@ By effectively managing micro frontends, development teams can ensure smooth col
 
 ![image](https://github.com/suramya-shah/introduction-to-microfrontends/assets/21042045/8f23bce7-7a75-4c9d-800f-2f2c5a957e17)
 
-
-Certainly! Here's a complete end-to-end pipeline for a multi-microfrontend architecture, including the GitHub Actions workflow, code, CloudFormation template, and infrastructure configuration:
-
-Certainly! Here's a basic code structure for a multi-microfrontend architecture that can be added to your repository:
-
 ```
 - .github/workflows/
   - ci-cd-pipeline.yml
@@ -178,8 +173,6 @@ Certainly! Here's a basic code structure for a multi-microfrontend architecture 
 - infrastructure.yaml
 ```
 
-Explanation:
-
 - `.github/workflows/`: This directory contains the GitHub Actions workflow file (`ci-cd-pipeline.yml`) for the CI/CD pipeline.
 
 - `microfrontend1/` and `microfrontend2/`: These directories represent the individual microfrontends. Each directory contains the source code, public assets, and configuration files specific to that microfrontend.
@@ -193,8 +186,6 @@ Explanation:
 - `webpack.config.js`: The webpack configuration file for each microfrontend, which handles the bundling and build process.
 
 - `infrastructure.yaml`: The CloudFormation template for creating the necessary AWS infrastructure.
-
-Please note that this is a basic structure, and you may need to customize it based on your specific requirements and project architecture.
 
 
 1. **GitHub Actions Workflow:**
@@ -254,8 +245,6 @@ jobs:
 
 - Place the code for each microfrontend inside its respective directory.
 
-  Certainly! Here's an example code structure for `microfrontend1`:
-
 ```
 - microfrontend1/
   - src/
@@ -270,7 +259,7 @@ jobs:
   - webpack.config.js
 ```
 
-Here's an example code for `App.js`:
+Following is an example code for `App.js`:
 
 ```jsx
 import React from 'react';
@@ -290,7 +279,7 @@ function App() {
 export default App;
 ```
 
-And here's an example code for `Button.js`:
+Following is example code for `Button.js`:
 
 ```jsx
 import React from 'react';
@@ -302,7 +291,7 @@ function Button() {
 export default Button;
 ```
 
-And an example code for `Card.js`:
+Following is example code for `Card.js`:
 
 ```jsx
 import React from 'react';
@@ -437,9 +426,6 @@ Explanation:
 
 - The alarms are associated with the `AlarmNotificationTopic`, which represents an SNS topic for sending notifications. In this example, it is configured to send email notifications to `your-email@example.com`.
 
-Please note that this is a simplified example, and you may need to customize the CloudFormation template based on your specific requirements and configuration.
-
-
 
 ## Micro Frontends Best Practices
 
@@ -464,7 +450,6 @@ Please note that this is a simplified example, and you may need to customize the
 
 By following these best practices, development teams can effectively manage and develop micro frontends while promoting collaboration, scalability, and maintainability within the architecture.
 
-
 Developing Efficient CI/CD Pipelines and Automations
 
 Automation plays a vital role in managing and deploying micro frontends. Building efficient CI/CD pipelines and automating repetitive tasks can significantly improve development velocity, code quality, and deployment reliability.
@@ -474,7 +459,6 @@ Performance Optimization Considerations
 Micro frontends bring their own performance challenges due to increased complexity and the potential for redundant code. Techniques like code splitting, lazy loading, and caching can be employed to optimize performance and reduce load times.
 
 ## Challenges of Micro Frontends and Ways to Mitigate Them
-
 
 Micro frontend architecture brings many benefits, but it also comes with its own set of challenges. Here are some common challenges associated with micro frontends and strategies to mitigate them:
 
