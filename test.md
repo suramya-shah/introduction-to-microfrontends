@@ -97,25 +97,25 @@ The choice of micro frontend framework and integration type depends on factors s
 
 Managing micro frontends involves implementing effective strategies and practices to handle the development, deployment, and maintenance of individual micro frontend modules within a larger application. Here are key considerations for managing micro frontends:
 
-1. Repository Setup: Choosing the right repository setup is crucial for managing micro frontends. There are different approaches, such as monorepo and multi-repo. In a monorepo setup, all micro frontend modules are stored in a single repository, allowing for shared code and centralized version control. In a multi-repo setup, each micro frontend has its own repository, providing autonomy and independence. Alternatively, a mixed approach can be adopted, where related micro frontends are grouped together in a monorepo while others have their own repositories.
+### 1. Repository Setup: Choosing the right repository setup is crucial for managing micro frontends. There are different approaches, such as monorepo and multi-repo. In a monorepo setup, all micro frontend modules are stored in a single repository, allowing for shared code and centralized version control. In a multi-repo setup, each micro frontend has its own repository, providing autonomy and independence. Alternatively, a mixed approach can be adopted, where related micro frontends are grouped together in a monorepo while others have their own repositories.
 
-	When it comes to managing micro frontends, there are different approaches that can be taken. The most common approaches are the monorepo, multi-repo, and mixed approaches.
+When it comes to managing micro frontends, there are different approaches that can be taken. The most common approaches are the monorepo, multi-repo, and mixed approaches.
 
-a. Monorepo Approach: In this approach, all the micro frontend modules are stored in a single repository. This allows for easier code sharing and visibility across the project.
+#### a. Monorepo Approach: In this approach, all the micro frontend modules are stored in a single repository. This allows for easier code sharing and visibility across the project.
 
    Benefits of Monorepo:
    - Enhanced code reuse and sharing between modules.
    - Improved visibility and easier cross-team collaboration.
    - Simplified dependency management.
 
-b. Multi-Repo Approach: In contrast, the multi-repo approach maintains separate repositories for each micro frontend module. This provides more isolation and independence for each module.
+#### b. Multi-Repo Approach: In contrast, the multi-repo approach maintains separate repositories for each micro frontend module. This provides more isolation and independence for each module.
 
-c. Mixed Approach: The mixed approach combines elements of both monorepo and multi-repo approaches, allowing flexibility based on the specific needs of the project.
+#### c. Mixed Approach: The mixed approach combines elements of both monorepo and multi-repo approaches, allowing flexibility based on the specific needs of the project.
 
 
-2. Team Collaboration: Collaboration between teams working on different micro frontends is essential. Establishing communication channels, documentation practices, and regular meetings help ensure alignment, knowledge sharing, and consistent development practices. Creating a culture of collaboration and knowledge transfer fosters a cohesive and efficient development process.
+### 2. Team Collaboration: Collaboration between teams working on different micro frontends is essential. Establishing communication channels, documentation practices, and regular meetings help ensure alignment, knowledge sharing, and consistent development practices. Creating a culture of collaboration and knowledge transfer fosters a cohesive and efficient development process.
 
-3. Dependency Management: Handling dependencies is crucial for managing micro frontends. Third-party dependencies should be managed centrally to avoid duplication and ensure version consistency. Shared code and libraries can be stored in separate repositories or managed within the monorepo structure. Proper dependency management practices, such as using package managers and versioning, help maintain stability and streamline development efforts.
+### 3. Dependency Management: Handling dependencies is crucial for managing micro frontends. Third-party dependencies should be managed centrally to avoid duplication and ensure version consistency. Shared code and libraries can be stored in separate repositories or managed within the monorepo structure. Proper dependency management practices, such as using package managers and versioning, help maintain stability and streamline development efforts.
 
 4. CI/CD and Automation: Implementing efficient Continuous Integration and Continuous Deployment (CI/CD) pipelines is vital for managing micro frontends. Automation tools, such as build systems, test runners, and deployment scripts, help automate the build, testing, and deployment processes. Integrating automated testing, code quality checks, and deployment strategies ensures consistent and reliable releases.
 
@@ -127,8 +127,6 @@ By effectively managing micro frontends, development teams can ensure smooth col
 ## CI/CD  setup of Micro Frontends and Infrastructure Management
 
 
-
-![image](https://github.com/suramya-shah/introduction-to-microfrontends/assets/21042045/8f23bce7-7a75-4c9d-800f-2f2c5a957e17)
 
 ```
 - .github/workflows/
@@ -169,7 +167,7 @@ By effectively managing micro frontends, development teams can ensure smooth col
 - `infrastructure.yaml`: The CloudFormation template for creating the necessary AWS infrastructure.
 
 
-1. **GitHub Actions Workflow:**
+1. GitHub Actions Workflow:
 
 ```yaml
 name: Microfrontend CI/CD Pipeline
@@ -469,5 +467,3 @@ In conclusion, micro frontends offer a compelling solution for building large-sc
 - [The Complete Guide to Micro Frontends](https://www.toptal.com/front-end/guide-to-micro-frontends)
 - [Breaking the Monolith Frontend for Better Scalability](https://levelup.gitconnected.com/micro-frontends-breaking-the-monolith-frontend-for-better-scalability-2e01f2e11d0e)
 - [Implementing Micro Frontends](https://aws.amazon.com/microservices/implementing-microservices-on-aws)
-
-
