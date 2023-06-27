@@ -97,25 +97,25 @@ The choice of micro frontend framework and integration type depends on factors s
 
 Managing micro frontends involves implementing effective strategies and practices to handle the development, deployment, and maintenance of individual micro frontend modules within a larger application. Here are key considerations for managing micro frontends:
 
-### 1. Repository Setup: Choosing the right repository setup is crucial for managing micro frontends. There are different approaches, such as monorepo and multi-repo. In a monorepo setup, all micro frontend modules are stored in a single repository, allowing for shared code and centralized version control. In a multi-repo setup, each micro frontend has its own repository, providing autonomy and independence. Alternatively, a mixed approach can be adopted, where related micro frontends are grouped together in a monorepo while others have their own repositories.
+1. Repository Setup: Choosing the right repository setup is crucial for managing micro frontends. There are different approaches, such as monorepo and multi-repo. In a monorepo setup, all micro frontend modules are stored in a single repository, allowing for shared code and centralized version control. In a multi-repo setup, each micro frontend has its own repository, providing autonomy and independence. Alternatively, a mixed approach can be adopted, where related micro frontends are grouped together in a monorepo while others have their own repositories.
 
 When it comes to managing micro frontends, there are different approaches that can be taken. The most common approaches are the monorepo, multi-repo, and mixed approaches.
 
-#### a. Monorepo Approach: In this approach, all the micro frontend modules are stored in a single repository. This allows for easier code sharing and visibility across the project.
+a. Monorepo Approach: In this approach, all the micro frontend modules are stored in a single repository. This allows for easier code sharing and visibility across the project.
 
    Benefits of Monorepo:
    - Enhanced code reuse and sharing between modules.
    - Improved visibility and easier cross-team collaboration.
    - Simplified dependency management.
 
-#### b. Multi-Repo Approach: In contrast, the multi-repo approach maintains separate repositories for each micro frontend module. This provides more isolation and independence for each module.
+b. Multi-Repo Approach: In contrast, the multi-repo approach maintains separate repositories for each micro frontend module. This provides more isolation and independence for each module.
 
-#### c. Mixed Approach: The mixed approach combines elements of both monorepo and multi-repo approaches, allowing flexibility based on the specific needs of the project.
+c. Mixed Approach: The mixed approach combines elements of both monorepo and multi-repo approaches, allowing flexibility based on the specific needs of the project.
 
 
-### 2. Team Collaboration: Collaboration between teams working on different micro frontends is essential. Establishing communication channels, documentation practices, and regular meetings help ensure alignment, knowledge sharing, and consistent development practices. Creating a culture of collaboration and knowledge transfer fosters a cohesive and efficient development process.
+2. Team Collaboration: Collaboration between teams working on different micro frontends is essential. Establishing communication channels, documentation practices, and regular meetings help ensure alignment, knowledge sharing, and consistent development practices. Creating a culture of collaboration and knowledge transfer fosters a cohesive and efficient development process.
 
-### 3. Dependency Management: Handling dependencies is crucial for managing micro frontends. Third-party dependencies should be managed centrally to avoid duplication and ensure version consistency. Shared code and libraries can be stored in separate repositories or managed within the monorepo structure. Proper dependency management practices, such as using package managers and versioning, help maintain stability and streamline development efforts.
+3. Dependency Management: Handling dependencies is crucial for managing micro frontends. Third-party dependencies should be managed centrally to avoid duplication and ensure version consistency. Shared code and libraries can be stored in separate repositories or managed within the monorepo structure. Proper dependency management practices, such as using package managers and versioning, help maintain stability and streamline development efforts.
 
 4. CI/CD and Automation: Implementing efficient Continuous Integration and Continuous Deployment (CI/CD) pipelines is vital for managing micro frontends. Automation tools, such as build systems, test runners, and deployment scripts, help automate the build, testing, and deployment processes. Integrating automated testing, code quality checks, and deployment strategies ensures consistent and reliable releases.
 
@@ -124,10 +124,11 @@ When it comes to managing micro frontends, there are different approaches that c
 By effectively managing micro frontends, development teams can ensure smooth collaboration, streamlined development processes, and efficient deployment and maintenance. This leads to a more scalable, maintainable, and resilient application architecture.
 
 
-## CI/CD  setup of Micro Frontends and Infrastructure Management
+## CI/CD  setup of Micro Frontends and Infrastructure Management- WIP
 
 
 
+The repository setup will be of the following format, we will be using Github, Github Actions, and AWS to achieve the CI/CD configuration
 ```
 - .github/workflows/
   - ci-cd-pipeline.yml
@@ -152,24 +153,79 @@ By effectively managing micro frontends, development teams can ensure smooth col
 - infrastructure.yaml
 ```
 
-- `.github/workflows/`: This directory contains the GitHub Actions workflow file (`ci-cd-pipeline.yml`) for the CI/CD pipeline.
+- .github/workflows/: This directory contains the GitHub Actions workflow file (`ci-cd-pipeline.yml`) for the CI/CD pipeline.
 
-- `microfrontend1/` and `microfrontend2/`: These directories represent the individual microfrontends. Each directory contains the source code, public assets, and configuration files specific to that microfrontend.
+- microfrontend1/ and microfrontend2/: These directories represent the individual microfrontends. Each directory contains the source code, public assets, and configuration files specific to that microfrontend.
 
-- `src/`: This directory holds the source code of each microfrontend, including the React components and application entry point.
+- src/: This directory holds the source code of each microfrontend, including the React components and application entry point.
 
-- `public/`: This directory contains the public assets for each microfrontend, such as the HTML template and other static files.
+- public/: This directory contains the public assets for each microfrontend, such as the HTML template and other static files.
 
-- `package.json`: The package.json file for each microfrontend, which includes the dependencies and build scripts.
+- package.json: The package.json file for each microfrontend, which includes the dependencies and build scripts.
 
-- `webpack.config.js`: The webpack configuration file for each microfrontend, which handles the bundling and build process.
+- webpack.config.js: The webpack configuration file for each microfrontend, which handles the bundling and build process.
 
-- `infrastructure.yaml`: The CloudFormation template for creating the necessary AWS infrastructure.
+- infrastructure.yaml: The CloudFormation template for creating the necessary AWS infrastructure.
+1. Code:
+
+- Create a directory for each microfrontend in the root of your project. For example:
+  - microfrontend1
+  - microfrontend2
+Place the code for each microfrontend inside its respective directory.
+
+Following is an example code for `App.js`:
+
+```
+import React from 'react';
+import Button from './components/Button';
+import Card from './components/Card';
+
+function App() {
+  return (
+    <div>
+      <h1>Microfrontend 1</h1>
+      <Button />
+      <Card />
+    </div>
+  );
+}
+
+export default App;
+```
+
+Following is example code for `Button.js`:
+
+```
+import React from 'react';
+
+function Button() {
+  return <button>Click me</button>;
+}
+
+export default Button;
+```
+
+Following is example code for `Card.js`:
+
+```
+import React from 'react';
+
+function Card() {
+  return (
+    <div>
+      <h2>Card Title</h2>
+      <p>This is a card component.</p>
+    </div>
+  );
+}
+
+export default Card;
+```
 
 
-1. GitHub Actions Workflow:
+2. GitHub Actions Workflow:
 
-```yaml
+```
 name: Microfrontend CI/CD Pipeline
 on:
   push:
@@ -208,7 +264,7 @@ jobs:
       - name: Deploy microfrontends to S3 buckets
         run: |
           aws s3 sync ./microfrontend1/dist s3://microfrontend1-bucket
-          aws s3 sync ./microfrontend2/dist s3://microfrontend2-bucket
+
           aws cloudfront create-invalidation --distribution-id your-distribution-id --paths "/*"
 
       - name: Provision AWS infrastructure using CloudFormation
@@ -216,80 +272,9 @@ jobs:
           aws cloudformation deploy --template-file infrastructure.yaml --stack-name your-stack-name --capabilities CAPABILITY_IAM
 ```
 
-2. **Code:**
 
-- Create a directory for each microfrontend in the root of your project. For example:
-  - `microfrontend1`
-  - `microfrontend2`
 
-- Place the code for each microfrontend inside its respective directory.
-
-```
-- microfrontend1/
-  - src/
-    - components/
-      - Button.js
-      - Card.js
-    - App.js
-    - index.js
-  - public/
-    - index.html
-  - package.json
-  - webpack.config.js
-```
-
-Following is an example code for `App.js`:
-
-```jsx
-import React from 'react';
-import Button from './components/Button';
-import Card from './components/Card';
-
-function App() {
-  return (
-    <div>
-      <h1>Microfrontend 1</h1>
-      <Button />
-      <Card />
-    </div>
-  );
-}
-
-export default App;
-```
-
-Following is example code for `Button.js`:
-
-```jsx
-import React from 'react';
-
-function Button() {
-  return <button>Click me</button>;
-}
-
-export default Button;
-```
-
-Following is example code for `Card.js`:
-
-```jsx
-import React from 'react';
-
-function Card() {
-  return (
-    <div>
-      <h2>Card Title</h2>
-      <p>This is a card component.</p>
-    </div>
-  );
-}
-
-export default Card;
-```
-
-These are just simple examples to illustrate the code structure and component hierarchy within `microfrontend1`. You can add more components and customize them according to your requirements.
-
-3. **CloudFormation Template (`infrastructure.yaml`):**
+3. CloudFormation Template (infrastructure.yaml):
 
 ```yaml
 Resources:
@@ -338,71 +323,12 @@ Resources:
           CloudFrontDefaultCertificate: true
 ```
 
-4. **Infrastructure Configuration:**
-
-- Ensure you have the AWS CLI installed and configured with your AWS credentials.
-
-- Replace `microfrontend1-bucket`, `microfrontend2-bucket`, `your-distribution-id`, and `your-stack-name` in the GitHub Actions workflow and CloudFormation template with your desired values.
-
-- Create S3 buckets in the AWS console with the names specified in the `Bucket
 
 
-Configuring alarms
 
-```yaml
-AWSTemplateFormatVersion: '2010-09-09'
-Resources:
-  CDNHitRatioAlarm:
-    Type: AWS::CloudWatch::Alarm
-    Properties:
-      AlarmName: CDNHitRatioAlarm
-      AlarmDescription: Alert if CDN cache hit ratio drops below a certain threshold
-      Namespace: AWS/CloudFront
-      MetricName: CacheHitRate
-      Statistic: Average
-      Period: 300
-      EvaluationPeriods: 1
-      Threshold: 90
-      ComparisonOperator: LessThanThreshold
-      AlarmActions:
-        - !Ref AlarmNotificationTopic
+4.Configuring alarms
 
-  S3BucketSizeAlarm:
-    Type: AWS::CloudWatch::Alarm
-    Properties:
-      AlarmName: S3BucketSizeAlarm
-      AlarmDescription: Alert if S3 bucket size exceeds a certain threshold
-      Namespace: AWS/S3
-      MetricName: BucketSizeBytes
-      Statistic: Average
-      Period: 900
-      EvaluationPeriods: 1
-      Threshold: 1073741824 # 1 GB
-      ComparisonOperator: GreaterThanThreshold
-      AlarmActions:
-        - !Ref AlarmNotificationTopic
-
-  AlarmNotificationTopic:
-    Type: AWS::SNS::Topic
-    Properties:
-      TopicName: MyAlarmNotificationTopic
-
-  AlarmEmailSubscription:
-    Type: AWS::SNS::Subscription
-    Properties:
-      Protocol: email
-      Endpoint: your-email@example.com
-      TopicArn: !Ref AlarmNotificationTopic
-```
-
-- The CloudFormation template defines two alarms: `CDNHitRatioAlarm` and `S3BucketSizeAlarm`.
-
-- The `CDNHitRatioAlarm` triggers an alert if the cache hit ratio drops below the threshold of 90% for a single evaluation period of 300 seconds (5 minutes). It uses the CloudFront namespace and the `CacheHitRate` metric.
-
-- The `S3BucketSizeAlarm` triggers an alert if the S3 bucket size exceeds the threshold of 1 GB (1073741824 bytes) for a single evaluation period of 900 seconds (15 minutes). It uses the S3 namespace and the `BucketSizeBytes` metric.
-
-- The alarms are associated with the `AlarmNotificationTopic`, which represents an SNS topic for sending notifications. In this example, it is configured to send email notifications to `your-email@example.com`.
-
+ to-do
 
 ## Micro Frontends Best Practices
 
@@ -467,3 +393,5 @@ In conclusion, micro frontends offer a compelling solution for building large-sc
 - [The Complete Guide to Micro Frontends](https://www.toptal.com/front-end/guide-to-micro-frontends)
 - [Breaking the Monolith Frontend for Better Scalability](https://levelup.gitconnected.com/micro-frontends-breaking-the-monolith-frontend-for-better-scalability-2e01f2e11d0e)
 - [Implementing Micro Frontends](https://aws.amazon.com/microservices/implementing-microservices-on-aws)
+
+
