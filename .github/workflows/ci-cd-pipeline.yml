@@ -25,7 +25,9 @@ jobs:
         run: npm install
 
       - name: Run tests
-        run: npm run test
+        run: |
+          cd microfrontend1/src
+          npm run test
 
       - name: Build microfrontends
         run: npm run build
