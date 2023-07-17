@@ -1,10 +1,10 @@
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './microfrontend1/src/index.js',
   output: {
-    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    path: path.resolve(__dirname, 'microfrontend1', 'dist'),
   },
   module: {
     rules: [
@@ -20,8 +20,7 @@ module.exports = {
       },
     ],
   },
-  devServer: {
-    contentBase: path.join(__dirname, 'public'),
-    port: 3000,
+  resolve: {
+    extensions: ['.js', '.jsx'],
   },
 };
