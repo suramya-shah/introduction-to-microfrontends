@@ -1,7 +1,12 @@
 import React from 'react';
 
-function Button() {
-  return <button>Click me</button>;
+function Card() {
+  return (
+    <div>
+      <h2>Card Title</h2>
+      <p>This is a card component.</p>
+    </div>
+  );
 }
 
-export default Button;
+export default Card;
