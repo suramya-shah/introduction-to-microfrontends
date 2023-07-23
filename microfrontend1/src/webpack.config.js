@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  entry: './microfrontend1/src/index.js',
+  entry: './index.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'microfrontend1', 'dist'),
