@@ -276,8 +276,18 @@ function App() {
   );
 }
 
+
+
 export default App;
 ```
+
+
+
+
+
+
+
+
 
 Following is example code for `Button.js`:
 
@@ -489,3 +499,21 @@ In conclusion, micro frontends offer a compelling solution for building large-sc
 - [Breaking the Monolith Frontend for Better Scalability](https://levelup.gitconnected.com/micro-frontends-breaking-the-monolith-frontend-for-better-scalability-2e01f2e11d0e)
 - [Implementing Micro Frontends](https://aws.amazon.com/microservices/implementing-microservices-on-aws)
 
+
+
+
+
+
+
+
+| Aspect                    | Monorepo                             | Multirepo                                    | Mixed Repo                                 |
+|---------------------------|--------------------------------------|---------------------------------------------|--------------------------------------------|
+| Definition                | A single repository for all microfrontends and shared code. | Separate repositories for each microfrontend. | A combination of both monorepo and multirepo approaches, using different strategies for different microfrontends. |
+| Code Sharing              | Easier to share code between microfrontends since they are in the same repository. | Code sharing requires additional setup or separate repositories. | Code sharing can be managed based on the individual strategy for each microfrontend. |
+| Development Workflow      | A unified development workflow for all microfrontends. | Each microfrontend may have its own development workflow. | Different development workflows based on the repository structure. |
+| Versioning                | Shared versioning for all microfrontends and dependencies. | Independent versioning for each microfrontend. | Different versioning strategies based on the approach used. |
+| Build & Deployment        | Simplified build and deployment process as all microfrontends are managed together. | Individual build and deployment pipelines for each microfrontend. | Customized build and deployment pipelines based on the mixed approach. |
+| Team Collaboration        | All teams work together in the same repository, promoting cross-team collaboration. | Teams can work independently in their separate repositories. | Teams may collaborate differently depending on the mixed approach used. |
+| Dependency Management     | Shared dependencies for all microfrontends, reducing potential conflicts. | Independent dependency management for each microfrontend. | Customized dependency management based on the mixed approach. |
+| Scalability & Isolation   | May encounter scalability issues if the repository becomes too large. Isolation can be challenging. | Provides isolation between microfrontends, aiding scalability. | Scalability and isolation depend on the specific mixed approach. |
+| Complexity & Maintenance  | Can become complex to manage with a large number of microfrontends. Maintenance may require careful planning. | Easier to manage smaller repositories, but complexity may increase as the number of repositories grows. | Complexity and maintenance depend on how the mixed approach is implemented. |
