@@ -111,6 +111,20 @@ Micro frontend architecture allows for the integration of different frameworks a
 The choice of micro frontend framework and integration type depends on factors such as project requirements, team expertise, and the need for interoperability. It is important to consider factors like performance, maintainability, and development experience when selecting the appropriate framework and integration approach. Ultimately, the goal is to achieve modular, independent, and seamlessly integrated micro frontends that collectively form a robust and scalable web application.
 
 
+Below is a comparison chart for Single-SPA, Web Components, Module Federation, and Iframe Integration in the context of microfrontends:
+
+| Feature                  | Single-SPA                   | Web Components                     | Module Federation                   | Iframe Integration                 |
+|--------------------------|------------------------------|------------------------------------|------------------------------------|------------------------------------|
+| **Dependency Management**| Manual configuration         | Built-in                            | Automatic                          | Minimal                           |
+| **Framework Agnostic**   | Works with multiple frameworks| Framework agnostic                  | Works with multiple frameworks      | Works with multiple frameworks      |
+| **Communication**        | Custom event system          | Props and events                    | Shared dependencies and events     | Cross-document messaging           |
+| **Code Isolation**       | Fully Isolated               | Partial isolation                   | Partial isolation                   | Fully Isolated                     |
+| **Performance**          | Lightweight and fast         | Fast rendering                     | Optimized loading                  | Can be slower depending on content |
+| **Reuse of Components**  | High                         | High                               | High                               | Low                               |
+| **Development Effort**   | Moderate                     | Low                                | Low                                | Low                                |
+| **Ecosystem Maturity**   | Mature                       | Mature                             | Emerging                           | Mature                             |
+
+
 ## Managing Micro Frontends
 
 
