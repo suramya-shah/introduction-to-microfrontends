@@ -1,10 +1,12 @@
+// microfrontend-app1/package.json
 {
   "name": "microfrontend1",
   "version": "1.0.0",
-  "description": "Microfrontend App",
+  "description": "Microfrontend App 1",
   "scripts": {
     "start": "webpack serve --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "test": "jest"
   },
   "dependencies": {
     "react": "^17.0.2",
@@ -17,6 +19,9 @@
     "@babel/preset-react": "^7.12.13",
     "webpack": "^5.39.1",
     "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "jest": "^27.0.6",
+    "@testing-library/react": "^12.0.0",
+    "@babel/plugin-transform-runtime": "^7.12.17"
   }
 }
