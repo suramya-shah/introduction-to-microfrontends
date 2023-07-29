@@ -36,7 +36,6 @@ jobs:
         run: |
           cd microfrontend1/src
           npm test
-
       - name: Build microfrontend
         working-directory: microfrontend1/src
         run: npm run build
@@ -44,5 +43,4 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.ACTIONS_GH_PAGES_TOKEN }}
           publish_dir: microfrontend1/src/dist     
