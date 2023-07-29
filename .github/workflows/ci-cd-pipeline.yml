@@ -16,29 +16,24 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Node.js and Yarn
+      - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
           node-version: 14
-          registry-url: 'https://registry.npmjs.org'
-          cache: 'yarn'
 
-      - name: Add npm bin to PATH
-        run: echo 'export PATH="$PATH:/home/runner/.npm-global/bin"' >> $GITHUB_ENV
-
-      - name: Install dependencies with yarn
+      - name: Install dependencies with npm
         run: |
           ls
-          yarn install
+          npm install
 
-      - name: Run tests with yarn
+      - name: Run tests with npm
         run: |
           cd microfrontend1/src
-          yarn test
+          npm test
 
       - name: Build microfrontends
         working-directory: microfrontend1/src
-        run: yarn build
+        run: npm run build
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
