@@ -1,7 +1,7 @@
-
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from '../App';
+import '@testing-library/jest-dom/extend-expect'; // Add this line to import the extend-expect package
 
 test('renders Microfrontend 1 heading', () => {
   render(<App />);
