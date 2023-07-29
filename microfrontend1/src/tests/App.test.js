@@ -1,10 +1,22 @@
 
 import React from 'react';
-import { render } from '@testing-library/react';
-import App from '../App';
+import { render, screen } from '@testing-library/react';
+import App from './App';
 
-test('renders microfrontend app title', () => {
-  const { getByText } = render(<App />);
-  const titleElement = getByText(/Microfrontend App 1/i);
-  expect(titleElement).toBeInTheDocument();
+test('renders Microfrontend 1 heading', () => {
+  render(<App />);
+  const headingElement = screen.getByText('Microfrontend 1');
+  expect(headingElement).toBeInTheDocument();
+});
+
+test('renders Button component', () => {
+  render(<App />);
+  const buttonElement = screen.getByRole('button');
+  expect(buttonElement).toBeInTheDocument();
+});
+
+test('renders Card component', () => {
+  render(<App />);
+  const cardElement = screen.getByText('Card Title');
+  expect(cardElement).toBeInTheDocument();
 });
