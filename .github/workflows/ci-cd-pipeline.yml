@@ -46,12 +46,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: microfrontend1/src/dist
-
-      - name: Check if infrastructure.yaml has changed
-        id: check_changes
-        run: echo "Changes detected in infrastructure.yaml" && echo "::set-output name=changed::true" || echo "::set-output name=changed::false"
-        
-      - name: Provision AWS infrastructure using CloudFormation
-        if: steps.check_changes.outputs.changed == 'true'
-        run: |
-          aws cloudformation deploy --template-file infrastructure.yaml --stack-name your-stack-name --capabilities CAPABILITY_IAM
