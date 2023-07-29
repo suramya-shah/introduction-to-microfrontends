@@ -21,6 +21,9 @@ jobs:
         with:
           node-version: 14
 
+      - name: Add npm bin to PATH
+        run: echo 'export PATH="$PATH:/home/runner/work/introduction-to-microfrontends/introduction-to-microfrontends/microfrontend1/src/node_modules/.bin"' >> $GITHUB_ENV
+
       - name: Install dependencies with npm
         run: |
           ls
