@@ -2,14 +2,30 @@ Resources:
   Microfrontend1Bucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: microfrontend1-bucket
+      BucketName: microfrontend1-bucket-ss
       AccessControl: PublicRead
+      BucketPolicy:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: PublicReadGetObject
+            Effect: Allow
+            Principal: '*'
+            Action: 's3:GetObject'
+            Resource: !Join ['', ['arn:aws:s3:::', !Ref Microfrontend1Bucket, '/*']]
 
   Microfrontend2Bucket:
     Type: AWS::S3::Bucket
     Properties:
-      BucketName: microfrontend2-bucket
+      BucketName: microfrontend2-bucket-ss
       AccessControl: PublicRead
+      BucketPolicy:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: PublicReadGetObject
+            Effect: Allow
+            Principal: '*'
+            Action: 's3:GetObject'
+            Resource: !Join ['', ['arn:aws:s3:::', !Ref Microfrontend2Bucket, '/*']]
 
   CloudFrontDistribution:
     Type: AWS::CloudFront::Distribution
@@ -42,5 +58,3 @@ Resources:
               Forward: none
         ViewerCertificate:
           CloudFrontDefaultCertificate: true
-
-          
