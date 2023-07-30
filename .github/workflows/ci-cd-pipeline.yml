@@ -48,11 +48,11 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      #- name: Deploy microfrontends to S3 buckets
-       # run: |
-        #  cd microfrontend1/src
-         # aws s3 sync ./dist s3://microfrontend1-bucket
-          #aws cloudfront create-invalidation --distribution-id your-distribution-id --paths "/*"
+      - name: Deploy microfrontends to S3 buckets
+        run: |
+          cd microfrontend1/src
+          aws s3 sync ./dist s3://microfrontend1-bucket
+          aws cloudfront create-invalidation --distribution-id E3U1CD1OO18B0J --paths "/*"
 
       - name: Check if infrastructure.yaml has changed
         id: check_changes
