@@ -19,4 +19,4 @@ jobs:
 
       - name: Deploy infrastructure.yaml
         run: |
-          aws cloudformation deploy --template-file infrastructure.yaml --stack-name your-stack-name --capabilities CAPABILITY_IAM
+          aws cloudformation deploy --template-file .infrastructure/infrastructure.yaml --stack-name your-stack-name --capabilities CAPABILITY_IAM
