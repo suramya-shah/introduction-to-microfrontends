@@ -17,6 +17,19 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Deploy infrastructure.yaml
+      - name: Check if stack exists
+        id: check_stack
         run: |
-          aws cloudformation deploy --template-file .infrastructure/infrastructure.yaml --stack-name your-stack-name --capabilities CAPABILITY_IAM
+          stack_name="your-stack-name"
+          aws cloudformation describe-stacks --stack-name $stack_name || echo "::set-output name=stack_exists::false"
+          echo "::set-output name=stack_exists::true"
+
+      - name: Deploy infrastructure.yaml
+        if: steps.check_stack.outputs.stack_exists == 'false'
+        run: |
+          aws cloudformation create-stack --template-body file://.infrastructure/infrastructure.yaml --stack-name your-stack-name --capabilities CAPABILITY_IAM
+
+      - name: Update infrastructure.yaml
+        if: steps.check_stack.outputs.stack_exists == 'true'
+        run: |
+          aws cloudformation update-stack --template-body file://.infrastructure/infrastructure.yaml --stack-name your-stack-name --capabilities CAPABILITY_IAM
