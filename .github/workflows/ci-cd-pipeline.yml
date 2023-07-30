@@ -50,8 +50,8 @@ jobs:
 
       - name: Deploy microfrontends to S3 buckets
         run: |
-          ls
-          aws s3 sync ./microfrontend1/dist s3://microfrontend1-bucket
+          cd microfrontend1/src
+          aws s3 sync ./dist s3://microfrontend1-bucket
           aws cloudfront create-invalidation --distribution-id your-distribution-id --paths "/*"
 
       - name: Check if infrastructure.yaml has changed
