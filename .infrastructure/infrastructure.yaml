@@ -3,28 +3,31 @@ Resources:
     Type: AWS::S3::Bucket
     Properties:
       BucketName: microfrontend1-bucket-ss
-      # Add other bucket properties and configurations here...
+      AccessControl: PublicRead
 
   Microfrontend2Bucket:
     Type: AWS::S3::Bucket
     Properties:
       BucketName: microfrontend2-bucket-ss
-      # Add other bucket properties and configurations here...
+      AccessControl: PublicRead
 
   CloudFrontDistribution:
     Type: AWS::CloudFront::Distribution
     Properties:
       DistributionConfig:
         Origins:
-          - DomainName: !Select [2, !Split ["/", !GetAtt Microfrontend1Bucket.WebsiteURL]]
+          - DomainName: !GetAtt Microfrontend1Bucket.RegionalDomainName
             Id: Microfrontend1Origin
-            S3OriginConfig: {}
-          - DomainName: !Select [2, !Split ["/", !GetAtt Microfrontend2Bucket.WebsiteURL]]
+            S3OriginConfig:
+              OriginAccessIdentity: ''
+          - DomainName: !GetAtt Microfrontend2Bucket.RegionalDomainName
             Id: Microfrontend2Origin
-            S3OriginConfig: {}
+            S3OriginConfig:
+              OriginAccessIdentity: ''
         Enabled: true
         DefaultRootObject: index.html
         DefaultCacheBehavior:
+          ViewerProtocolPolicy: allow-all   # Add this line to set the viewer protocol policy
           AllowedMethods:
             - GET
             - HEAD
