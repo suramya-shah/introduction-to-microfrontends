@@ -42,6 +42,11 @@ jobs:
         run: | 
           npm run build
           cp index.html dist/
+          
+      - name: Debug - List files in dist directory
+        run: |
+          cd microfrontend1/src
+          ls -R dist          
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
