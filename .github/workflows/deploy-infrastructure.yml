@@ -22,9 +22,13 @@ jobs:
         run: |
           stack_name="your-stack-name"
           if aws cloudformation describe-stacks --stack-name $stack_name; then
-            echo "::set-output name=stack_exists::true"
             status=$(aws cloudformation describe-stacks --stack-name $stack_name --query 'Stacks[0].StackStatus' --output text)
-            echo "::set-output name=stack_status::$status"
+            if [ "$status" != "ROLLBACK_COMPLETE" ]; then
+              echo "::set-output name=stack_exists::true"
+              echo "::set-output name=stack_status::$status"
+            else
+              echo "::set-output name=stack_exists::false"
+            fi
           else
             echo "::set-output name=stack_exists::false"
           fi
