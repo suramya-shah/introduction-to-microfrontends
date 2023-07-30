@@ -21,24 +21,27 @@ jobs:
         id: check_stack
         run: |
           stack_name="your-stack-name"
-          if aws cloudformation describe-stacks --stack-name $stack_name; then
-            status=$(aws cloudformation describe-stacks --stack-name $stack_name --query 'Stacks[0].StackStatus' --output text)
-            if [ "$status" != "ROLLBACK_COMPLETE" ]; then
-              echo "::set-output name=stack_exists::true"
-              echo "::set-output name=stack_status::$status"
-            else
-              echo "::set-output name=stack_exists::false"
-            fi
-          else
-            echo "::set-output name=stack_exists::false"
-          fi
+          aws cloudformation describe-stacks --stack-name $stack_name || echo "::set-output name=stack_exists::false"
+          echo "::set-output name=stack_exists::true"
 
       - name: Deploy infrastructure.yaml
         if: steps.check_stack.outputs.stack_exists == 'false'
         run: |
           aws cloudformation create-stack --template-body file://.infrastructure/infrastructure.yaml --stack-name your-stack-name --capabilities CAPABILITY_IAM
+        id: create_stack
+
+      - name: Wait for stack creation to complete
+        if: steps.check_stack.outputs.stack_exists == 'false'
+        run: |
+          aws cloudformation wait stack-create-complete --stack-name your-stack-name
 
       - name: Update infrastructure.yaml
-        if: steps.check_stack.outputs.stack_exists == 'true' && steps.check_stack.outputs.stack_status != 'ROLLBACK_COMPLETE'
+        if: steps.check_stack.outputs.stack_exists == 'true'
         run: |
           aws cloudformation update-stack --template-body file://.infrastructure/infrastructure.yaml --stack-name your-stack-name --capabilities CAPABILITY_IAM
+        id: update_stack
+
+      - name: Wait for stack update to complete
+        if: steps.check_stack.outputs.stack_exists == 'true'
+        run: |
+          aws cloudformation wait stack-update-complete --stack-name your-stack-name
