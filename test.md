@@ -1,5 +1,6 @@
 Introduction
 
+
 Micro frontends have emerged as a revolutionary architectural pattern in web development, providing a solution to the limitations of monolithic frontends. Traditionally, web applications were built as a single, tightly coupled unit, making it challenging to maintain, scale, and deploy changes. Micro frontends offer a fresh perspective by breaking down the frontend into smaller, independent units that can be developed and deployed separately.
 
 The main concept behind micro frontends is to divide the frontend into multiple self-contained modules, each responsible for a specific functionality or feature of the application. These modules can be developed using different technologies, frameworks, or programming languages, allowing teams to choose the most suitable tools for their specific requirements. This modular approach promotes flexibility, scalability, and independent development.
