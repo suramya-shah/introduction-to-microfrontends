@@ -53,7 +53,7 @@ jobs:
       - name: Deploy microfrontends to S3 buckets
         run: |
           cd microfrontend1/src
-          aws s3 sync ./dist s3://microfrontend1-bucket-ss
+      
           aws s3 sync ./dist s3://microfrontend1-bucket-ss --cache-control "max-age=3600, public"
           aws cloudfront create-invalidation --distribution-id E3U1CD1OO18B0J --paths "/*"
 
