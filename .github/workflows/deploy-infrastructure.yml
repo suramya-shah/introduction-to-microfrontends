@@ -21,12 +21,12 @@ jobs:
         id: check_stack
         run: |
           stack_name="your-stack-name"
-          status=$(aws cloudformation describe-stacks --stack-name $stack_name --query 'Stacks[0].StackStatus' --output text)
-          if [ -z "$status" ]; then
-            echo "::set-output name=stack_exists::false"
-          else
+          if aws cloudformation describe-stacks --stack-name $stack_name; then
             echo "::set-output name=stack_exists::true"
+            status=$(aws cloudformation describe-stacks --stack-name $stack_name --query 'Stacks[0].StackStatus' --output text)
             echo "::set-output name=stack_status::$status"
+          else
+            echo "::set-output name=stack_exists::false"
           fi
 
       - name: Deploy infrastructure.yaml
