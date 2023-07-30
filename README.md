@@ -19,12 +19,17 @@ blog_side_alt: ""
 
 ![Alt Text](41-coke-overview.gif)
 
+# Introduction to Micro Frontends
+
 Micro frontends have emerged as a revolutionary architectural pattern in web development, providing a solution to the limitations of monolithic frontends. Traditionally, web applications were built as a single, tightly coupled unit, making it challenging to maintain, scale, and deploy changes. Micro frontends offer a fresh perspective by breaking down the frontend into smaller, independent units that can be developed and deployed separately.
 
 The main concept behind micro frontends is to divide the frontend into multiple self-contained modules, each responsible for a specific functionality or feature of the application. These modules can be developed using different technologies, frameworks, or programming languages, allowing teams to choose the most suitable tools for their specific requirements. This modular approach promotes flexibility, scalability, and independent development.
+In this blog post, we will explore more about micro frontends, along with best practices and challenges associated with micro frontend architecture.
 
-## Monolithic Frontends and its Disadvantages
-Monolithic frontends, while a traditional approach to building web applications, have several disadvantages as the application grows in complexity and size. Here are the key drawbacks of monolithic frontends:
+## Disadvantages of Monolithic Frontends
+
+Monolithic frontends refer to the traditional approach of building web applications where the entire frontend codebase is contained within a single, tightly coupled application.
+In this architecture, all components and features are interconnected, making it challenging to scale, maintain, and update the application as it grows.Here are the key drawbacks of monolithic frontends:
 
 1. Lack of flexibility and scalability: Modifying or adding new features to a monolithic frontend requires redeploying the entire application, leading to longer development cycles and potential disruptions to the user experience. Scaling the application uniformly can be challenging, as resources need to be allocated regardless of specific component needs.
 
@@ -36,12 +41,15 @@ Monolithic frontends, while a traditional approach to building web applications,
 
 5. Performance limitations: Monolithic frontends can suffer from performance issues as the entire frontend is loaded at once, leading to slower load times and increased resource consumption.
 
-To address these disadvantages, alternative architectural patterns like micro frontends have emerged. Micro frontends offer modular and independent units of the frontend, enabling faster development cycles, flexibility in technology choices, easier maintenance, improved team collaboration, and enhanced performance optimization. By breaking down the frontend into smaller, self-contained modules, micro frontends provide a solution to the limitations of monolithic frontends, allowing for more scalable, adaptable, and maintainable web applications.
+To address these disadvantages, alternative architectural pattern- micro frontends have emerged. Micro frontends offer modular and independent units of the frontend, enabling faster development cycles, flexibility in technology choices, easier maintenance, improved team collaboration, and enhanced performance optimization. By breaking down the frontend into smaller, self-contained modules, micro frontends provide a solution to the limitations of monolithic frontends, allowing for more scalable, adaptable, and maintainable web applications.
 
 
-## What are Micro Frontends? Why is it Needed?
+## What are Micro Frontends?
 
-Micro frontends are an architectural pattern in web development where the frontend of an application is divided into smaller, independent units that can be developed, deployed, and maintained separately. Each micro frontend represents a specific functionality or feature of the application and can be developed using different technologies, frameworks, or programming languages.
+
+Micro frontends are an architectural pattern in web development that offers an alternative approach to building frontend applications. In this pattern, the frontend of an application is divided into smaller, independent units or modules. Each module, known as a micro frontend, can be developed, deployed, and maintained separately from the others. Each micro frontend represents a specific functionality or feature of the application and can be developed using different technologies, frameworks, or programming languages.
+
+Why is it needed?
 
 The need for micro frontends arises from the limitations of monolithic frontends as applications grow in complexity and size. Here are the key reasons why micro frontends are needed:
 
@@ -58,7 +66,7 @@ The need for micro frontends arises from the limitations of monolithic frontends
 Micro frontends offer a modular and independent approach to frontend development, addressing the limitations of monolithic frontends. By enabling parallel development, scalability, flexibility in technology choices, code reusability, and improved team collaboration, micro frontends provide a solution to building large and complex web applications efficiently and effectively.
 
 
-## Benefits of Micro Frontends
+Benefits of Micro Frontends
 
 Micro frontends have gained popularity in web development due to the numerous benefits they offer. This architectural pattern brings advantages that address the limitations of monolithic frontends. Here are the key benefits of micro frontends:
 
@@ -72,10 +80,10 @@ Micro frontends have gained popularity in web development due to the numerous be
 
 5. Improved Performance and User Experience: Micro frontends offer performance benefits through optimized loading and rendering. Only the required modules are loaded, reducing the initial load time. Lazy loading and dynamic loading techniques can further enhance performance by deferring the loading of non-critical modules. Additionally, micro frontends allow for targeted optimization of specific functionalities, resulting in a smoother and faster user experience.
 
-There are several benefits that microfrontends provide, including independent development and deployment, scalability, flexibility, enhanced maintainability, improved team collaboration and autonomy, and better performance and user experience. By adopting micro frontends, development teams can build and evolve large-scale web applications more effectively and efficiently, while addressing the limitations of monolithic frontends.
+There are several benefits that micro frontends provide, including independent development and deployment, scalability, flexibility, enhanced maintainability, improved team collaboration and autonomy, and better performance and user experience. By adopting micro frontends, development teams can build and evolve large-scale web applications more effectively and efficiently, while addressing the limitations of monolithic frontends.
 
 
-## Micro Frontend Architecture
+Micro Frontend Architecture
 
 Micro frontend architecture refers to the design and structure of a web application that is built using the micro frontend approach. It involves breaking down the frontend into smaller, independent units called micro frontends, each responsible for a specific functionality or feature of the application. The architecture encompasses various components and patterns to enable seamless integration and collaboration between these micro frontends.
 
@@ -88,13 +96,7 @@ Micro frontend architecture refers to the design and structure of a web applicat
 4. Components: Micro frontend architecture promotes the use of modular components within each micro frontend. Components can be reusable and self-contained, allowing teams to develop and update them independently. Component-based development simplifies maintenance, promotes consistency, and encourages code reusability.
 
 
-![image](https://github.com/suramya-shah/introduction-to-microfrontends/assets/21042045/c0ef39b7-d885-4f96-8c2b-a83120c8b0e8)
-
-![image](https://github.com/suramya-shah/introduction-to-microfrontends/assets/21042045/73330218-3354-41cb-9cf0-1cce00ef6260)
-
-
-
-## Micro Frontend Frameworks and Integration Types
+Micro Frontend Frameworks and Integration Types
 
 Micro frontend architecture allows for the integration of different frameworks and technologies to build modular and independent frontend components. There are several frameworks and integration types available that facilitate the development and integration of micro frontends. Let's explore some popular micro frontend frameworks and integration types:
 
@@ -110,8 +112,7 @@ Micro frontend architecture allows for the integration of different frameworks a
 
 The choice of micro frontend framework and integration type depends on factors such as project requirements, team expertise, and the need for interoperability. It is important to consider factors like performance, maintainability, and development experience when selecting the appropriate framework and integration approach. Ultimately, the goal is to achieve modular, independent, and seamlessly integrated micro frontends that collectively form a robust and scalable web application.
 
-
-Below is a comparison chart for Single-SPA, Web Components, Module Federation, and Iframe Integration in the context of microfrontends:
+Below is a comparison chart for Single-SPA, Web Components, Module Federation, and Iframe Integration:
 
 | Feature                  | Single-SPA                   | Web Components                     | Module Federation                   | Iframe Integration                 |
 |--------------------------|------------------------------|------------------------------------|------------------------------------|------------------------------------|
@@ -124,15 +125,14 @@ Below is a comparison chart for Single-SPA, Web Components, Module Federation, a
 | **Development Effort**   | Moderate                     | Low                                | Low                                | Low                                |
 | **Ecosystem Maturity**   | Mature                       | Mature                             | Emerging                           | Mature                             |
 
-
-## Managing Micro Frontends
+Managing Micro Frontends
 
 
 Managing micro frontends involves implementing effective strategies and practices to handle the development, deployment, and maintenance of individual micro frontend modules within a larger application. Here are key considerations for managing micro frontends:
 
-1. Repository Setup: Choosing the right repository setup is crucial for managing micro frontends. There are different approaches, such as monorepo and multi-repo. In a monorepo setup, all micro frontend modules are stored in a single repository, allowing for shared code and centralized version control. In a multi-repo setup, each micro frontend has its own repository, providing autonomy and independence. Alternatively, a mixed approach can be adopted, where related micro frontends are grouped together in a monorepo while others have their own repositories.
+1. Repository Setup: Choosing the right repository setup is crucial for managing micro frontends. There are different approaches, such as monorepo, multi-repo and mixed. In a monorepo setup, all micro frontend modules are stored in a single repository, allowing for shared code and centralized version control. In a multi-repo setup, each micro frontend has its own repository, providing autonomy and independence. Alternatively, a mixed approach can be adopted, where related micro frontends are grouped together in a monorepo while others have their own repositories.
 
-	When it comes to managing micro frontends, there are different approaches that can be taken. The most common approaches are the monorepo, multi-repo, and mixed approaches.
+When it comes to managing micro frontends, there are different approaches that can be taken. The most common approaches are the monorepo, multi-repo, and mixed approaches.
 
 a. Monorepo Approach: In this approach, all the micro frontend modules are stored in a single repository. This allows for easier code sharing and visibility across the project.
 
@@ -141,9 +141,33 @@ a. Monorepo Approach: In this approach, all the micro frontend modules are store
    - Improved visibility and easier cross-team collaboration.
    - Simplified dependency management.
 
+
 b. Multi-Repo Approach: In contrast, the multi-repo approach maintains separate repositories for each micro frontend module. This provides more isolation and independence for each module.
 
+
+
 c. Mixed Approach: The mixed approach combines elements of both monorepo and multi-repo approaches, allowing flexibility based on the specific needs of the project.
+
+Following table discusses more about the approaches:
+
+| Aspect                    | Monorepo                             | Multirepo                                    | Mixed Repo                                 |
+|---------------------------|--------------------------------------|---------------------------------------------|--------------------------------------------|
+| Definition                | A single repository for all microfrontends and shared code. | Separate repositories for each microfrontend. | A combination of both monorepo and multirepo approaches, using different strategies for different microfrontends. |
+| Code Sharing              | Easier to share code between microfrontends since they are in the same repository. | Code sharing requires additional setup or separate repositories. | Code sharing can be managed based on the individual strategy for each microfrontend. |
+| Development Workflow      | A unified development workflow for all microfrontends. | Each microfrontend may have its own development workflow. | Different development workflows based on the repository structure. |
+| Versioning                | Shared versioning for all microfrontends and dependencies. | Independent versioning for each microfrontend. | Different versioning strategies based on the approach used. |
+| Build & Deployment        | Simplified build and deployment process as all microfrontends are managed together. | Individual build and deployment pipelines for each microfrontend. | Customized build and deployment pipelines based on the mixed approach. |
+| Team Collaboration        | All teams work together in the same repository, promoting cross-team collaboration. | Teams can work independently in their separate repositories. | Teams may collaborate differently depending on the mixed approach used. |
+| Dependency Management     | Shared dependencies for all microfrontends, reducing potential conflicts. | Independent dependency management for each microfrontend. | Customized dependency management based on the mixed approach. |
+| Scalability & Isolation   | May encounter scalability issues if the repository becomes too large. Isolation can be challenging. | Provides isolation between microfrontends, aiding scalability. | Scalability and isolation depend on the specific mixed approach. |
+| Complexity & Maintenance  | Can become complex to manage with a large number of microfrontends. Maintenance may require careful planning. | Easier to manage smaller repositories, but complexity may increase as the number of repositories grows. | Complexity and maintenance depend on how the mixed approach is implemented. |
+| Advantages                | Easy code sharing, unified development workflow, shared versioning, simplified build and deployment. | Independent microfrontend development, isolation, scalability. | Combination of benefits from both approaches. |
+| Disadvantages             | Potential scalability issues with a large codebase, complex maintenance, may require additional tooling for isolation. | Code sharing complexities, dependency management challenges, inter-team collaboration overhead. | Complexity in managing multiple approaches, potential inconsistency in workflows. |
+
+
+
+
+
 
 
 2. Team Collaboration: Collaboration between teams working on different micro frontends is essential. Establishing communication channels, documentation practices, and regular meetings help ensure alignment, knowledge sharing, and consistent development practices. Creating a culture of collaboration and knowledge transfer fosters a cohesive and efficient development process.
@@ -157,13 +181,11 @@ c. Mixed Approach: The mixed approach combines elements of both monorepo and mul
 By effectively managing micro frontends, development teams can ensure smooth collaboration, streamlined development processes, and efficient deployment and maintenance. This leads to a more scalable, maintainable, and resilient application architecture.
 
 
-## CI/CD  setup of Micro Frontends and Infrastructure Management
+Getting started with micro frontends
 
+The repository setup will be of the following format, we will be using Github, Github Actions, and AWS to achieve the CI/CD configuration
 
-
-![image](https://github.com/suramya-shah/introduction-to-microfrontends/assets/21042045/8f23bce7-7a75-4c9d-800f-2f2c5a957e17)
-
-```
+```yaml
 - .github/workflows/
   - ci-cd-pipeline.yml
 - microfrontend1/
@@ -187,22 +209,79 @@ By effectively managing micro frontends, development teams can ensure smooth col
 - infrastructure.yaml
 ```
 
-- `.github/workflows/`: This directory contains the GitHub Actions workflow file (`ci-cd-pipeline.yml`) for the CI/CD pipeline.
+- .github/workflows/: This directory contains the GitHub Actions workflow file (`ci-cd-pipeline.yml`) for the CI/CD pipeline.
 
-- `microfrontend1/` and `microfrontend2/`: These directories represent the individual microfrontends. Each directory contains the source code, public assets, and configuration files specific to that microfrontend.
+- microfrontend1/ and microfrontend2/: These directories represent the individual microfrontends. Each directory contains the source code, public assets, and configuration files specific to that microfrontend.
 
-- `src/`: This directory holds the source code of each microfrontend, including the React components and application entry point.
+- src/: This directory holds the source code of each microfrontend, including the React components and application entry point.
 
-- `public/`: This directory contains the public assets for each microfrontend, such as the HTML template and other static files.
+- public/: This directory contains the public assets for each microfrontend, such as the HTML template and other static files.
 
-- `package.json`: The package.json file for each microfrontend, which includes the dependencies and build scripts.
+- package.json: The package.json file for each microfrontend, which includes the dependencies and build scripts.
 
-- `webpack.config.js`: The webpack configuration file for each microfrontend, which handles the bundling and build process.
+- webpack.config.js: The webpack configuration file for each microfrontend, which handles the bundling and build process.
 
-- `infrastructure.yaml`: The CloudFormation template for creating the necessary AWS infrastructure.
+- infrastructure.yaml: The CloudFormation template for creating the necessary AWS infrastructure.
 
 
-1. **GitHub Actions Workflow:**
+1. Code:
+
+- Create a directory for each microfrontend in the root of your project. For example:
+  - microfrontend1
+  - microfrontend2
+Place the code for each microfrontend inside its respective directory.
+
+Following is an example code for `App.js`:
+
+```jsx
+import React from 'react';
+import Button from './components/Button';
+import Card from './components/Card';
+
+function App() {
+  return (
+    <div>
+      <h1>Microfrontend 1</h1>
+      <Button />
+      <Card />
+    </div>
+  );
+}
+
+export default App;
+```
+
+Following is example code for `Button.js`:
+
+```jsx
+import React from 'react';
+
+function Button() {
+  return <button>Click me</button>;
+}
+
+export default Button;
+```
+
+Following is example code for `Card.js`:
+
+```jsx
+import React from 'react';
+
+function Card() {
+  return (
+    <div>
+      <h2>Card Title</h2>
+      <p>This is a card component.</p>
+    </div>
+  );
+}
+
+export default Card;
+```
+
+
+2. GitHub Actions Workflow:
 
 ```yaml
 name: Microfrontend CI/CD Pipeline
@@ -240,10 +319,10 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Deploy microfrontends to S3 buckets
+      - name: Deploy micro frontends to S3 buckets
         run: |
           aws s3 sync ./microfrontend1/dist s3://microfrontend1-bucket
-          aws s3 sync ./microfrontend2/dist s3://microfrontend2-bucket
+
           aws cloudfront create-invalidation --distribution-id your-distribution-id --paths "/*"
 
       - name: Provision AWS infrastructure using CloudFormation
@@ -251,94 +330,13 @@ jobs:
           aws cloudformation deploy --template-file infrastructure.yaml --stack-name your-stack-name --capabilities CAPABILITY_IAM
 ```
 
-2. **Code:**
-
-- Create a directory for each microfrontend in the root of your project. For example:
-  - `microfrontend1`
-  - `microfrontend2`
-
-- Place the code for each microfrontend inside its respective directory.
-
-```
-- microfrontend1/
-  - src/
-    - components/
-      - Button.js
-      - Card.js
-    - App.js
-    - index.js
-  - public/
-    - index.html
-  - package.json
-  - webpack.config.js
-```
-
-Following is an example code for `App.js`:
-
-```jsx
-import React from 'react';
-import Button from './components/Button';
-import Card from './components/Card';
-
-function App() {
-  return (
-    <div>
-      <h1>Microfrontend 1</h1>
-      <Button />
-      <Card />
-    </div>
-  );
-}
 
 
-
-export default App;
-```
-
-
-
-
-
-
-
-
-
-Following is example code for `Button.js`:
-
-```jsx
-import React from 'react';
-
-function Button() {
-  return <button>Click me</button>;
-}
-
-export default Button;
-```
-
-Following is example code for `Card.js`:
-
-```jsx
-import React from 'react';
-
-function Card() {
-  return (
-    <div>
-      <h2>Card Title</h2>
-      <p>This is a card component.</p>
-    </div>
-  );
-}
-
-export default Card;
-```
-
-These are just simple examples to illustrate the code structure and component hierarchy within `microfrontend1`. You can add more components and customize them according to your requirements.
-
-3. **CloudFormation Template (`infrastructure.yaml`):**
+3. CloudFormation Template (infrastructure.yaml):
 
 ```yaml
 Resources:
-  Microfrontend1Bucket:
+  Micro frontend Bucket:
     Type: AWS::S3::Bucket
     Properties:
       BucketName: microfrontend1-bucket
@@ -383,73 +381,17 @@ Resources:
           CloudFrontDefaultCertificate: true
 ```
 
-4. **Infrastructure Configuration:**
-
-- Ensure you have the AWS CLI installed and configured with your AWS credentials.
-
-- Replace `microfrontend1-bucket`, `microfrontend2-bucket`, `your-distribution-id`, and `your-stack-name` in the GitHub Actions workflow and CloudFormation template with your desired values.
-
-- Create S3 buckets in the AWS console with the names specified in the `Bucket
 
 
-Configuring alarms
 
-```yaml
-AWSTemplateFormatVersion: '2010-09-09'
-Resources:
-  CDNHitRatioAlarm:
-    Type: AWS::CloudWatch::Alarm
-    Properties:
-      AlarmName: CDNHitRatioAlarm
-      AlarmDescription: Alert if CDN cache hit ratio drops below a certain threshold
-      Namespace: AWS/CloudFront
-      MetricName: CacheHitRate
-      Statistic: Average
-      Period: 300
-      EvaluationPeriods: 1
-      Threshold: 90
-      ComparisonOperator: LessThanThreshold
-      AlarmActions:
-        - !Ref AlarmNotificationTopic
+4.Configuring alarms
 
-  S3BucketSizeAlarm:
-    Type: AWS::CloudWatch::Alarm
-    Properties:
-      AlarmName: S3BucketSizeAlarm
-      AlarmDescription: Alert if S3 bucket size exceeds a certain threshold
-      Namespace: AWS/S3
-      MetricName: BucketSizeBytes
-      Statistic: Average
-      Period: 900
-      EvaluationPeriods: 1
-      Threshold: 1073741824 # 1 GB
-      ComparisonOperator: GreaterThanThreshold
-      AlarmActions:
-        - !Ref AlarmNotificationTopic
-
-  AlarmNotificationTopic:
-    Type: AWS::SNS::Topic
-    Properties:
-      TopicName: MyAlarmNotificationTopic
-
-  AlarmEmailSubscription:
-    Type: AWS::SNS::Subscription
-    Properties:
-      Protocol: email
-      Endpoint: your-email@example.com
-      TopicArn: !Ref AlarmNotificationTopic
-```
-
-- The CloudFormation template defines two alarms: `CDNHitRatioAlarm` and `S3BucketSizeAlarm`.
-
-- The `CDNHitRatioAlarm` triggers an alert if the cache hit ratio drops below the threshold of 90% for a single evaluation period of 300 seconds (5 minutes). It uses the CloudFront namespace and the `CacheHitRate` metric.
-
-- The `S3BucketSizeAlarm` triggers an alert if the S3 bucket size exceeds the threshold of 1 GB (1073741824 bytes) for a single evaluation period of 900 seconds (15 minutes). It uses the S3 namespace and the `BucketSizeBytes` metric.
-
-- The alarms are associated with the `AlarmNotificationTopic`, which represents an SNS topic for sending notifications. In this example, it is configured to send email notifications to `your-email@example.com`.
+ to-do
 
 
-## Micro Frontends Best Practices
+
+Micro Frontends Best Practices
+
 
 
 1. Avoid Horizontal Teams: Instead of organizing teams based on frontend technologies, create vertical teams aligned with business capabilities. This allows each team to take ownership of a specific micro frontend and be responsible for its development, deployment, and maintenance.
@@ -472,7 +414,7 @@ Resources:
 
 By following these best practices, development teams can effectively manage and develop micro frontends while promoting collaboration, scalability, and maintainability within the architecture.
 
-## Challenges of Micro Frontends and Ways to Mitigate Them
+Challenges of Micro Frontends and Ways to Mitigate Them
 
 Micro frontend architecture brings many benefits, but it also comes with its own set of challenges. Here are some common challenges associated with micro frontends and strategies to mitigate them:
 
@@ -493,9 +435,9 @@ Micro frontend architecture brings many benefits, but it also comes with its own
 By proactively addressing these challenges and implementing appropriate mitigation strategies, development teams can overcome the hurdles associated with micro frontend architecture and create scalable, maintainable, and robust applications.
 
 
-## Conclusion
+Conclusion
 
-Micro frontends have emerged as a powerful architectural pattern for building scalable and modular web applications. By breaking down monolithic frontends into smaller, independent units, micro frontends offer several advantages and address many limitations of traditional approaches.
+Micro frontends have emerged as a powerful architectural pattern for building scalable and modular web applications. By breaking down monolithic front ends into smaller, independent units, micro frontends offer several advantages and address many limitations of traditional approaches.
 
 In this blog post, we explored the concept of micro frontends, their benefits, architecture, frameworks, managing techniques, CI/CD, best practices, and challenges. We learned that micro frontends enable teams to work autonomously, making development, deployment, and maintenance more manageable. The use of different frameworks and integration types allows for flexibility and interoperability within the architecture.
 
@@ -503,33 +445,18 @@ The benefits of micro frontends include improved team collaboration, better scal
 
 However, micro frontends also come with their own challenges. Cross-cutting concerns, team collaboration issues, performance optimization, versioning, and testing can present hurdles. Nevertheless, these challenges can be mitigated through careful planning, effective communication, robust tooling, and best practices.
 
-In conclusion, micro frontends offer a compelling solution for building large-scale web applications. They empower development teams to work independently, adopt the best tools for the job, and create modular and scalable architectures. By embracing micro frontends, organizations can achieve greater flexibility, maintainability, and resilience in their frontend development processes, ultimately delivering better user experiences and driving business success.
+In conclusion, micro frontends offer a compelling solution for building large-scale web applications. They empower development teams to work independently, adopt the best tools for the job, and create modular and scalable architectures. By embracing micro frontends, organizations can achieve greater flexibility, maintainability, and resilience in their frontend development processes, ultimately delivering better user experiences and driving business success.I hope you found this post informative and engaging. For more posts like this one, do subscribe to our weekly newsletter. I’d love to hear your thoughts on this post, so do start a conversation on LinkedIn :).
 
 
-## References and further reading 
+
+References and further reading 
 
 - [Micro Frontends](https://martinfowler.com/articles/micro-frontends.html)
 - [The Complete Guide to Micro Frontends](https://www.toptal.com/front-end/guide-to-micro-frontends)
 - [Breaking the Monolith Frontend for Better Scalability](https://levelup.gitconnected.com/micro-frontends-breaking-the-monolith-frontend-for-better-scalability-2e01f2e11d0e)
 - [Implementing Micro Frontends](https://aws.amazon.com/microservices/implementing-microservices-on-aws)
-
-
-
-
-
-
-
-| Aspect                    | Monorepo                             | Multirepo                                    | Mixed Repo                                 |
-|---------------------------|--------------------------------------|---------------------------------------------|--------------------------------------------|
-| Definition                | A single repository for all microfrontends and shared code. | Separate repositories for each microfrontend. | A combination of both monorepo and multirepo approaches, using different strategies for different microfrontends. |
-| Code Sharing              | Easier to share code between microfrontends since they are in the same repository. | Code sharing requires additional setup or separate repositories. | Code sharing can be managed based on the individual strategy for each microfrontend. |
-| Development Workflow      | A unified development workflow for all microfrontends. | Each microfrontend may have its own development workflow. | Different development workflows based on the repository structure. |
-| Versioning                | Shared versioning for all microfrontends and dependencies. | Independent versioning for each microfrontend. | Different versioning strategies based on the approach used. |
-| Build & Deployment        | Simplified build and deployment process as all microfrontends are managed together. | Individual build and deployment pipelines for each microfrontend. | Customized build and deployment pipelines based on the mixed approach. |
-| Team Collaboration        | All teams work together in the same repository, promoting cross-team collaboration. | Teams can work independently in their separate repositories. | Teams may collaborate differently depending on the mixed approach used. |
-| Dependency Management     | Shared dependencies for all microfrontends, reducing potential conflicts. | Independent dependency management for each microfrontend. | Customized dependency management based on the mixed approach. |
-| Scalability & Isolation   | May encounter scalability issues if the repository becomes too large. Isolation can be challenging. | Provides isolation between microfrontends, aiding scalability. | Scalability and isolation depend on the specific mixed approach. |
-| Complexity & Maintenance  | Can become complex to manage with a large number of microfrontends. Maintenance may require careful planning. | Easier to manage smaller repositories, but complexity may increase as the number of repositories grows. | Complexity and maintenance depend on how the mixed approach is implemented. |
-| Advantages                | Easy code sharing, unified development workflow, shared versioning, simplified build and deployment. | Independent microfrontend development, isolation, scalability. | Combination of benefits from both approaches. |
-| Disadvantages             | Potential scalability issues with a large codebase, complex maintenance, may require additional tooling for isolation. | Code sharing complexities, dependency management challenges, inter-team collaboration overhead. | Complexity in managing multiple approaches, potential inconsistency in workflows. |
-
+- [Single spa](https://single-spa.js.org/docs/module-types/)
+- [Module Federation](https://levelup.gitconnected.com/microfrontends-with-module-federation-what-why-and-how-845f06020ee1)
+- [Iframe Integration](https://docs.wavemaker.com/learn/how-tos/microfrontends-iframe/)
+- [Page building using Server Side includes](https://itnext.io/page-building-using-micro-frontends-c13c157958c8)
+- [Single spa](https://single-spa.js.org/docs/module-types/)
