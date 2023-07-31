@@ -41,12 +41,7 @@ jobs:
         working-directory: microfrontend1/src
         run: | 
           npm run build
-          cp public/index.html dist/
-          
-      - name: Debug - List files in dist directory
-        run: |
-          cd microfrontend1/src
-          ls -R dist          
+          cp public/index.html dist/       
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
