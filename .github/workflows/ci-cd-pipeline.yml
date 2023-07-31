@@ -41,7 +41,7 @@ jobs:
         working-directory: microfrontend1/src
         run: | 
           npm run build
-          cp index.html dist/
+          cp public/index.html dist/
           
       - name: Debug - List files in dist directory
         run: |
