@@ -6,9 +6,9 @@ index_image: /assets/img/Blog/
 date: 2023-06-20
 slug: introduction-to-microfrontends
 categories:
-  - Service Mesh
-tags: ["service mesh","service-mesh-architecture","service-mesh-use-cases"]
-featured_image: /assets/img/Blog/demystifying-service-mesh/demystifying-a-service-mesh-1600x350.svg
+  - Microfrontends
+tags: ["","",""]
+featured_image: 
 cta_label: "Learn More"
 cta_content: ""
 cta_url: "/"
@@ -17,7 +17,6 @@ blog_side_img: "/assets/img/"
 blog_side_alt: ""
 ---
 
-![Alt Text](41-coke-overview.gif)
 
 # Introduction to Micro Frontends
 
@@ -41,10 +40,10 @@ In this architecture, all components and features are interconnected, making it 
 
 5. Performance limitations: Monolithic frontends can suffer from performance issues as the entire frontend is loaded at once, leading to slower load times and increased resource consumption.
 
-To address these disadvantages, alternative architectural pattern- micro frontends have emerged. Micro frontends offer modular and independent units of the frontend, enabling faster development cycles, flexibility in technology choices, easier maintenance, improved team collaboration, and enhanced performance optimization. By breaking down the frontend into smaller, self-contained modules, micro frontends provide a solution to the limitations of monolithic frontends, allowing for more scalable, adaptable, and maintainable web applications.
+To address these disadvantages, alternative architectural pattern called micro frontends have emerged. Micro frontends offer modular and independent units of the frontend, enabling faster development cycles, flexibility in technology choices, easier maintenance, improved team collaboration, and enhanced performance optimization. By breaking down the frontend into smaller, self-contained modules, micro frontends provide a solution to the limitations of monolithic frontends, allowing for more scalable, adaptable, and maintainable web applications.
 
 
-## What are Micro Frontends?
+What are Micro Frontends?
 
 
 Micro frontends are an architectural pattern in web development that offers an alternative approach to building frontend applications. In this pattern, the frontend of an application is divided into smaller, independent units or modules. Each module, known as a micro frontend, can be developed, deployed, and maintained separately from the others. Each micro frontend represents a specific functionality or feature of the application and can be developed using different technologies, frameworks, or programming languages.
@@ -95,6 +94,8 @@ Micro frontend architecture refers to the design and structure of a web applicat
 
 4. Components: Micro frontend architecture promotes the use of modular components within each micro frontend. Components can be reusable and self-contained, allowing teams to develop and update them independently. Component-based development simplifies maintenance, promotes consistency, and encourages code reusability.
 
+Following diagram shows use of each component in a micro frontend setup: 
+
 
 Micro Frontend Frameworks and Integration Types
 
@@ -136,17 +137,15 @@ When it comes to managing micro frontends, there are different approaches that c
 
 a. Monorepo Approach: In this approach, all the micro frontend modules are stored in a single repository. This allows for easier code sharing and visibility across the project.
 
-   Benefits of Monorepo:
-   - Enhanced code reuse and sharing between modules.
-   - Improved visibility and easier cross-team collaboration.
-   - Simplified dependency management.
-
 
 b. Multi-Repo Approach: In contrast, the multi-repo approach maintains separate repositories for each micro frontend module. This provides more isolation and independence for each module.
 
 
 
 c. Mixed Approach: The mixed approach combines elements of both monorepo and multi-repo approaches, allowing flexibility based on the specific needs of the project.
+
+
+
 
 Following table discusses more about the approaches:
 
@@ -165,11 +164,6 @@ Following table discusses more about the approaches:
 | Disadvantages             | Potential scalability issues with a large codebase, complex maintenance, may require additional tooling for isolation. | Code sharing complexities, dependency management challenges, inter-team collaboration overhead. | Complexity in managing multiple approaches, potential inconsistency in workflows. |
 
 
-
-
-
-
-
 2. Team Collaboration: Collaboration between teams working on different micro frontends is essential. Establishing communication channels, documentation practices, and regular meetings help ensure alignment, knowledge sharing, and consistent development practices. Creating a culture of collaboration and knowledge transfer fosters a cohesive and efficient development process.
 
 3. Dependency Management: Handling dependencies is crucial for managing micro frontends. Third-party dependencies should be managed centrally to avoid duplication and ensure version consistency. Shared code and libraries can be stored in separate repositories or managed within the monorepo structure. Proper dependency management practices, such as using package managers and versioning, help maintain stability and streamline development efforts.
@@ -182,12 +176,25 @@ By effectively managing micro frontends, development teams can ensure smooth col
 
 
 Getting started with micro frontends
+In this section, we will explore the deployment of a microfrontend application by creating a sample application. We'll begin by configuring a dedicated repository for the microfrontend and setting up a CI/CD pipeline to automate the build and deployment process. 
 
-The repository setup will be of the following format, we will be using Github, Github Actions, and AWS to achieve the CI/CD configuration
+
+Prerequisites:
+
+To successfully run the workflow we need to ensure the following:
+AWS Account:  AWS account with appropriate permissions to create and manage AWS CloudFormation stacks.
+GitHub Repository: Make sure we have a dedicated Github repository where we will be using the below mentioned structure to keep the code and yamls required for the ci/cd using Github Actions.
+GitHub Secrets: In the GitHub repository, set up the required secrets to store the IAM user's access credentials securely. (AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY or ROLE_ARN for assume role operations)
+Infrastructure: Make sure to create the infrastructure (CFN stack consisting Cloudfront and s3 bucket)first using deploy-infrastructure.yaml and add all the required bucket policies, and any required headers.
+.
+
+
+The repository setup will be of the following format, we will be using Github, Github Actions, and AWS to achieve the CI/CD configuration for deploying a micro frontend application.
 
 ```yaml
 - .github/workflows/
   - ci-cd-pipeline.yml
+  - deploy-infrastructure.yml
 - microfrontend1/
   - src/
     - components/
@@ -206,7 +213,7 @@ The repository setup will be of the following format, we will be using Github, G
     - index.html
   - package.json
   - webpack.config.js
-- infrastructure.yaml
+- .infrastructure/infrastructure.yaml
 ```
 
 - .github/workflows/: This directory contains the GitHub Actions workflow file (`ci-cd-pipeline.yml`) for the CI/CD pipeline.
@@ -219,17 +226,24 @@ The repository setup will be of the following format, we will be using Github, G
 
 - package.json: The package.json file for each microfrontend, which includes the dependencies and build scripts.
 
-- webpack.config.js: The webpack configuration file for each microfrontend, which handles the bundling and build process.
+- webpack.config.js: The webpack configuration file for each micro frontend, which handles the bundling and build process.
 
 - infrastructure.yaml: The CloudFormation template for creating the necessary AWS infrastructure.
+
+For detailed structure please check:
+Repo link: introduction-to-microfrontends/microfrontend1 at main · suramya-shah/introduction-to-microfrontends (github.com)
+
+ 
 
 
 1. Code:
 
-- Create a directory for each microfrontend in the root of your project. For example:
+To create a micro frontend named microfrontend1, we will follow the recommended directory structure and create the necessary files. This will allow us to develop and manage microfrontend1 independently.
+
+- Create a directory for each micro frontend in the root of your project. For example:
   - microfrontend1
-  - microfrontend2
-Place the code for each microfrontend inside its respective directory.
+
+Let us create setup for microfrontend1 in the following structure:
 
 Following is an example code for `App.js`:
 
@@ -261,6 +275,7 @@ function Button() {
 }
 
 export default Button;
+
 ```
 
 Following is example code for `Card.js`:
@@ -278,10 +293,44 @@ function Card() {
 }
 
 export default Card;
+
 ```
+Following is example code for web webpack.config.js
 
+```jsx
+const path = require('path');
 
+module.exports = {
+  entry: './index.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react'],
+          },
+        },
+      },
+    ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
+};
+
+```
+ 
+In the above steps we will be adding all the required code components in the repository, for detailed templates you can check the above mentioned repo link for the code.
 2. GitHub Actions Workflow:
+
+The GitHub Actions workflow defined in the YAML file aims to automate the Continuous Integration and Continuous Deployment (CI/CD) pipeline for the microfrontend1. It is triggered on every push to the main branch.
 
 ```yaml
 name: Microfrontend CI/CD Pipeline
@@ -289,6 +338,10 @@ on:
   push:
     branches:
       - main
+  workflow_run:
+    workflows: ["CI/CD Pipeline"]
+    paths:
+      - '/infrastructure.yaml'
 
 jobs:
   build-test-deploy-provision:
@@ -303,14 +356,27 @@ jobs:
         with:
           node-version: 14
 
-      - name: Install dependencies
-        run: npm install
+      - name: Cache node_modules
+        uses: actions/cache@v2
+        with:
+          path: microfrontend1/src/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('microfrontend1/src/package-lock.json') }}
 
-      - name: Run tests
-        run: npm run test
+      - name: Install dependencies with npm
+        run: |
+          cd microfrontend1/src
+          npm install        
+
+      - name: Run tests with npm
+        run: |
+          cd microfrontend1/src
+          npm test
 
       - name: Build microfrontends
-        run: npm run build
+        working-directory: microfrontend1/src
+        run: | 
+          npm run build
+          cp public/index.html dist/       
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -319,34 +385,44 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
 
-      - name: Deploy micro frontends to S3 buckets
+      - name: Deploy microfrontends to S3 buckets
         run: |
-          aws s3 sync ./microfrontend1/dist s3://microfrontend1-bucket
+          cd microfrontend1/src
+      
+          aws s3 sync ./dist s3://microfrontend1-bucket --cache-control "max-age=3600, public"
+          aws cloudfront create-invalidation --distribution-id YOUR-DISTRIBUTION-ID --paths "/*"
 
-          aws cloudfront create-invalidation --distribution-id your-distribution-id --paths "/*"
-
+      - name: Check if infrastructure.yaml has changed
+        id: check_changes
+        run: echo "Changes detected in infrastructure.yaml" && echo "::set-output name=changed::true" || echo "::set-output name=changed::false"
+        
       - name: Provision AWS infrastructure using CloudFormation
+        if: steps.check_changes.outputs.changed == 'true'
         run: |
           aws cloudformation deploy --template-file infrastructure.yaml --stack-name your-stack-name --capabilities CAPABILITY_IAM
+
+
+
+
 ```
-
-
+Following is the Github Actions snippet for the pipeline:
 
 3. CloudFormation Template (infrastructure.yaml):
+The CloudFormation template (infrastructure.yaml) is used to provision the necessary infrastructure resources for hosting the micro frontends. In this example, we are creating AWS S3 buckets for hosting the static assets of microfrontend1,as well as an AWS CloudFront distribution for content delivery and caching.
 
 ```yaml
 Resources:
-  Micro frontend Bucket:
+  Microfrontend1Bucket:
     Type: AWS::S3::Bucket
     Properties:
       BucketName: microfrontend1-bucket
-      AccessControl: PublicRead
+     
 
   Microfrontend2Bucket:
     Type: AWS::S3::Bucket
     Properties:
       BucketName: microfrontend2-bucket
-      AccessControl: PublicRead
+      
 
   CloudFrontDistribution:
     Type: AWS::CloudFront::Distribution
@@ -364,6 +440,7 @@ Resources:
         Enabled: true
         DefaultRootObject: index.html
         DefaultCacheBehavior:
+          ViewerProtocolPolicy: allow-all   # Add this line to set the viewer protocol policy
           AllowedMethods:
             - GET
             - HEAD
@@ -379,17 +456,70 @@ Resources:
               Forward: none
         ViewerCertificate:
           CloudFrontDefaultCertificate: true
+
 ```
 
+In this step we have created infrastructure.yml which we will be using to create/update our Cloudformation stack.
+4. Github actions workflow to create and update only infra (deploy-infrastructure.yaml):
+The deploy-infrastructure.yaml GitHub Actions workflow is designed to manage the creation and updates of infrastructure resources on the AWS cloud using AWS CloudFormation. This workflow can be triggered manually using the "workflow_dispatch" event.
+deploy-infrastructure.yml
+
+```yaml
+name: Deploy Infrastructure
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - name: Check if stack exists
+        id: check_stack
+        run: |
+          stack_name="your-stack-name"
+          if aws cloudformation describe-stacks --stack-name $stack_name; then
+            status=$(aws cloudformation describe-stacks --stack-name $stack_name --query 'Stacks[0].StackStatus' --output text)
+            if [ "$status" != "ROLLBACK_COMPLETE" ]; then
+              echo "::set-output name=stack_exists::true"
+              echo "::set-output name=stack_status::$status"
+            else
+              echo "::set-output name=stack_exists::false"
+            fi
+          else
+            echo "::set-output name=stack_exists::false"
+          fi
+
+      - name: Deploy infrastructure.yaml
+        if: steps.check_stack.outputs.stack_exists == 'false'
+        run: |
+          aws cloudformation create-stack --template-body file://.infrastructure/infrastructure.yaml --stack-name your-stack-name --capabilities CAPABILITY_IAM
+
+      - name: Update infrastructure.yaml
+        if: steps.check_stack.outputs.stack_exists == 'true' && steps.check_stack.outputs.stack_status != 'ROLLBACK_COMPLETE'
+        run: |
+          aws cloudformation update-stack --template-body file://.infrastructure/infrastructure.yaml --stack-name your-stack-name --capabilities CAPABILITY_IAM
+
+```
+
+Following is the Github Actions Snippet of the pipeline:
 
 
 
-4.Configuring alarms
-
- to-do
 
 
 
+In this section, we successfully set up microfrontend1, creating a dedicated directory with required components. We also configured a GitHub Actions workflow for CI/CD and deployed microfrontend1 to AWS S3 and used CloudFront for efficient content delivery.
 Micro Frontends Best Practices
 
 
@@ -455,8 +585,4 @@ References and further reading
 - [The Complete Guide to Micro Frontends](https://www.toptal.com/front-end/guide-to-micro-frontends)
 - [Breaking the Monolith Frontend for Better Scalability](https://levelup.gitconnected.com/micro-frontends-breaking-the-monolith-frontend-for-better-scalability-2e01f2e11d0e)
 - [Implementing Micro Frontends](https://aws.amazon.com/microservices/implementing-microservices-on-aws)
-- [Single spa](https://single-spa.js.org/docs/module-types/)
-- [Module Federation](https://levelup.gitconnected.com/microfrontends-with-module-federation-what-why-and-how-845f06020ee1)
-- [Iframe Integration](https://docs.wavemaker.com/learn/how-tos/microfrontends-iframe/)
-- [Page building using Server Side includes](https://itnext.io/page-building-using-micro-frontends-c13c157958c8)
-- [Single spa](https://single-spa.js.org/docs/module-types/)
+
